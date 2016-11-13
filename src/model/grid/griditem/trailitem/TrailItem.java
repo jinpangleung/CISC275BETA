@@ -27,11 +27,9 @@ public class TrailItem extends MovableObject {
 	
 	public void click(){
 		Collection<TrailItem> TI = Grid.getInstance().getTrailItems();
-		double x = this.coord.getX();
-		double y = this.coord.getY();
 		for (TrailItem a:TI){
-			if (Math.sqrt(x*x+y*y)<a.range){
-				Model.getInstance().getTouch().Clamp(a);
+			if (isInRange(a.getCoord())){
+				Model.getInstance().getTouch().Clamp(a);					
 			}
 			else{
 				System.out.println("Not in range for any tower");
