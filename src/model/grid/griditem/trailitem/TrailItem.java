@@ -6,6 +6,7 @@ import model.Model;
 import model.drawing.Animation;
 import model.drawing.Coord;
 import model.grid.Grid;
+import model.grid.GridColor;
 import model.grid.gridcell.GridPosition;
 import model.moving.MovableObject;
 import model.moving.Velocity;
@@ -20,16 +21,24 @@ import model.moving.Velocity;
  */
 
 public class TrailItem extends MovableObject {
-
+	
+	protected GridColor gridcolor;
+	
 	public TrailItem(Coord coord, Animation animation, GridPosition gridPosition, Velocity velocity) {
 		super(coord, animation, gridPosition, velocity);
 	}
 	
+	public GridColor getColor(){
+		return this.gridcolor;
+	}
+	
 	public void click(){
-		Collection<TrailItem> TI = Grid.getInstance().getTrailItems();
-		for (TrailItem a:TI){
-			if (isInRange(a.getCoord())){
-				Model.getInstance().getTouch().Clamp(a);					
+		Collection<Tower> TI = Grid.getInstance().getTowers();
+		for (Tower a:TI){
+			if (a.getColor() == this.getColor()){
+				if (isInRange(a.getCoord())){
+					Model.getInstance().getTouch().Clamp(a);					
+				}
 			}
 			else{
 				System.out.println("Not in range for any tower");
