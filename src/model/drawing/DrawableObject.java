@@ -14,8 +14,8 @@ import java.awt.Graphics;
 
 public abstract class DrawableObject {
 	
-	private Coord coord;
-	private Animation animation;
+	protected Coord coord;
+	protected Animation animation;
 	
 	public DrawableObject(Coord coord, Animation animation){
 		this.coord = coord;

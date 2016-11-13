@@ -23,7 +23,7 @@ public class Model {
 	
 	public void initialize(int screenWidth, int screenHeight){
 		System.out.println("\tModel is being initialized");
-		defaultComponent = new Component(0, 0, screenWidth, screenHeight);
+		defaultComponent = new DefaultComponent(0, 0, screenWidth, screenHeight);
 		componentMapping = new ComponentMapping(defaultComponent, screenWidth, screenHeight);
 		Animation.initialize();
 		touch = new Touch();

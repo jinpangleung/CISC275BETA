@@ -3,6 +3,8 @@ package model.moving;
 import model.drawing.Animation;
 import model.drawing.Coord;
 import model.drawing.DrawableObject;
+import model.grid.gridcell.GridPosition;
+import model.grid.griditem.GridItem;
 
 /**
  * MovableObject
@@ -14,10 +16,11 @@ import model.drawing.DrawableObject;
  *
  */
 
-public abstract class MovableObject extends DrawableObject {
-	
-	public MovableObject(Coord coord, Animation animation) {
-		super(coord, animation);
+public abstract class MovableObject extends GridItem {
+
+	public MovableObject(Coord coord, Animation animation, GridPosition gridPosition, Velocity velocity) {
+		super(coord, animation, gridPosition);
+		this.velocity = velocity;
 	}
 
 	private Velocity velocity;

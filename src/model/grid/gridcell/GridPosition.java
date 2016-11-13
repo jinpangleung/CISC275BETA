@@ -31,6 +31,14 @@ public class GridPosition {
 		this.y = y;
 	}
 	
-	
+	public String toString(){
+		String str = "";
+		str += "(";
+		str += Integer.toString(x);
+		str += ", ";
+		str += Integer.toString(y);
+		str += ")";
+		return str;
+	}
 
 }

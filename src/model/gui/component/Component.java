@@ -10,10 +10,10 @@ package model.gui.component;
  *
  */
 
-public class Component {
+public abstract class Component {
 	
-	private ComponentPosition topLeft;
-	private ComponentPosition bottomRight;
+	protected ComponentPosition topLeft;
+	protected ComponentPosition bottomRight;
 	
 	public Component(ComponentPosition topLeft, int width, int height){
 		this.topLeft = topLeft;
