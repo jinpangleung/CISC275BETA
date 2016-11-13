@@ -30,7 +30,7 @@ public class TrailItem extends MovableObject {
 		double x = this.coord.getX();
 		double y = this.coord.getY();
 		for (TrailItem a:TI){
-			if (Math.sqrt(x*x+y*y)<a.radius){
+			if (Math.sqrt(x*x+y*y)<a.range){
 				Model.getInstance().getTouch().Clamp(a);
 			}
 			else{
