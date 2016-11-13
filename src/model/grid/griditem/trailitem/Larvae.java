@@ -1,5 +1,5 @@
 package model.grid.griditem.trailitem;
 
-public class Larvae {
+public class Larvae extends TrailItem{
 	
 }
