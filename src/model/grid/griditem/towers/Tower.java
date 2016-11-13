@@ -64,6 +64,8 @@ public abstract class Tower extends GridItem {
 		return false;	
 	}
 	
+	
+	
 	public String toString(){
 		String str = "";
 		switch(gridColor){
@@ -96,6 +98,21 @@ public abstract class Tower extends GridItem {
 		}
 		else{
 			//snap()
+		}
+	}
+	
+	public void release(){
+		GridItem gi = Touch.unClamp();
+		if(gi instanceof TrailItem){
+			if(gi.getColor()==this.getColor()){
+				//DO SOMETHING
+			}
+			else{
+				Tower.snap(gi, Touch.getCoord());
+			}
+		}
+		else{
+			Tower.snap(gi, Touch.getCoord());
 		}
 	}
 	
