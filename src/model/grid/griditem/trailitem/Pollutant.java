@@ -1,5 +1,5 @@
 package model.grid.griditem.trailitem;
 
-public class Pollutant {
+public class Pollutant extends TrailItem{
 	
 }
