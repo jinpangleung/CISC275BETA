@@ -7,7 +7,7 @@ package model.gui;
 public class Path {
 	
 	private GridItem gi;
-	private Posn destination;
+	private Coord destination;
 	private PathBehavior behavior;
 	private PathTermination terminate;
 	private int speed; // seperate from Grid Item's speed
