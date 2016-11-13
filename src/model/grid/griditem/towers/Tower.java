@@ -1,11 +1,14 @@
 package model.grid.griditem.towers;
 
+import com.sun.prism.paint.Color;
+
 import model.drawing.Animation;
 import model.drawing.Coord;
 import model.drawing.Offset;
 import model.grid.GridColor;
 import model.grid.gridcell.GridPosition;
 import model.grid.griditem.GridItem;
+import model.grid.griditem.trailitem.Oyster;
 import model.grid.griditem.trailitem.TrailItem;
 import model.gui.touch.Touch;
 /**
@@ -64,8 +67,6 @@ public abstract class Tower extends GridItem {
 		return false;	
 	}
 	
-	
-	
 	public String toString(){
 		String str = "";
 		switch(gridColor){
@@ -87,22 +88,38 @@ public abstract class Tower extends GridItem {
 	}
 	
 	public void release(){
-		GridItem gi = Touch.unClamp();
-		if(gi instanceof TrailItem){
-			if(gi.getColor()==this.getColor()){
-				//DO SOMETHING
+		if(Touch.isHolding()){
+			GridItem gi = Touch.unClamp();
+			if(gi instanceof TrailItem){
+				if(gi.getColor()==this.getColor() || gi.getColor() == GridColor.WHITE){
+					Tower.react(gi, this.getColor());
+				}
+				else{
+					Tower.snap(gi, Touch.getCoord());
+				}
 			}
 			else{
 				Tower.snap(gi, Touch.getCoord());
 			}
 		}
-		else{
-			Tower.snap(gi, Touch.getCoord());
-		}
 	}
 	
 	public static void snap(GridItem gridI, Coord dest){
 		gridI.setCoord(dest);
+	}
+	
+	public static void react(GridItem gi, GridColor towerColor){
+		if(gi.getColor() == towerColor){
+			if(gi instanceof Oyster){
+				//ADD OYSTER
+			}
+			else{
+				//INCREASE HAPPINESS
+			}
+		}
+		else{
+			//DECREASE HAPPINESS
+		}
 	}
 	
 //	@Override
