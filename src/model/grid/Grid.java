@@ -2,8 +2,8 @@ package model.grid;
 
 import model.grid.gridcell.GridCell;
 
-public class Grid {
+public class Grid extends Component {
 	
-	private GridCell gridCells[][];
+	
 
 }
