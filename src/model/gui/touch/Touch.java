@@ -19,6 +19,7 @@ public class Touch {
 	private DrawableObject holding;
 	private DrawableObject nullObject;
 	private boolean isHolding;
+	private Coord coord;
 	
 	public Touch(){
 		nullObject = new DefaultTouchObject();
@@ -32,6 +33,7 @@ public class Touch {
 	
 	public void clamp(DrawableObject objectToBeClamped){
 		this.holding = objectToBeClamped;
+		this. coord = obejctToBeClamped.getCoord();
 	}
 	
 	public DrawableObject unClamp(){
@@ -47,6 +49,10 @@ public class Touch {
 	public DrawableObject getHolding() {
 		return holding;
 	}
+	
+	public Coord getCoord(){
+		return coord;
+	} 
 
 	public void setHolding(DrawableObject holding) {
 		this.holding = holding;
