@@ -55,7 +55,7 @@ public abstract class MovableObject extends GridItem {
 		//TODO-check if goes into next grid, if yes update grid position.		
 		//get grid position for checking block
 		//get coor position for checking pixel
-		GridPosition = Grid.getGridPosition(coord);
+		GridPosition gridPos = Grid.getGridPosition(coord);
 		
 		
 	}
