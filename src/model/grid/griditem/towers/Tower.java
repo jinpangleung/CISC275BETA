@@ -93,27 +93,16 @@ public abstract class Tower extends GridItem {
 				//DO SOMETHING
 			}
 			else{
-				//snap()
-			}
-		}
-		else{
-			//snap()
-		}
-	}
-	
-	public void release(){
-		GridItem gi = Touch.unClamp();
-		if(gi instanceof TrailItem){
-			if(gi.getColor()==this.getColor()){
-				//DO SOMETHING
-			}
-			else{
 				Tower.snap(gi, Touch.getCoord());
 			}
 		}
 		else{
 			Tower.snap(gi, Touch.getCoord());
 		}
+	}
+	
+	public static void snap(GridItem gridI, Coord dest){
+		gridI.setCoord(dest);
 	}
 	
 //	@Override
