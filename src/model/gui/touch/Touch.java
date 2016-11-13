@@ -50,7 +50,7 @@ public class Touch {
 		return holding;
 	}
 	
-	public Coord getCoord(){
+	public static Coord getCoord(){
 		return coord;
 	} 
 
