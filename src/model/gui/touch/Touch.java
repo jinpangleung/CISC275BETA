@@ -19,7 +19,7 @@ public class Touch {
 	private DrawableObject holding;
 	private DrawableObject nullObject;
 	private boolean isHolding;
-	private Coord coord;
+	private static Coord coord;
 	
 	public Touch(){
 		nullObject = new DefaultTouchObject();
