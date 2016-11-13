@@ -3,6 +3,7 @@ package model.moving;
 import model.drawing.Animation;
 import model.drawing.Coord;
 import model.drawing.DrawableObject;
+import model.grid.Grid;
 import model.grid.gridcell.GridPosition;
 import model.grid.griditem.GridItem;
 
@@ -24,9 +25,47 @@ public abstract class MovableObject extends GridItem {
 	}
 
 	private Velocity velocity;
+	final double MAXVELOCITY = Grid.getSize()/50;
 	
-	public void move(){
-		// TODO
+	public void move(long elapsedTime){
+		Acceleration a = Grid.getInstance().getAcceleration(this.getGridPosition());//grabs acceleration of current
+		double ax = a.getX();//for specifics
+		double ay = a.getY();
+		Velocity v = Grid.getInstance().getVelocity(this.getGridPosition());//grabs acceleration of current
+		double vx = v.getX();//for specifics
+		double vy = v.getY();
+		
+		//specifics for readability, xx and yy represent acceleration + velocity which is velocity
+		double xx =  ax + vx;
+		double yy = ay + vy;
+		
+		//changes velocity
+		v.setX(xx);
+		v.setY(yy);
+		
+		//coordinate for positon
+		double cx = this.getCoord().getX(); 
+		double cy = this.getCoord().getY();
+		
+		//calculations for coordinate
+		cx = cx + (xx * elapsedTime);
+		cy = cy + (yy * elapsedTime);
+		
+		
+		//TODO-check if goes into next grid, if yes update grid position.		
+		//get grid position for checking block
+		//get coor position for checking pixel
+		GridPosition = Grid.getGridPosition(coord);
+		
+		
+	}
+	//eventually move code from move() to this for readability
+	public void updateVelocity(){
+		//nothing yet
+	}
+	//eventually move code from move() to this for readability
+	public void applyVelocity(){
+		//nothing yet
 	}
 	
 	public Velocity getVelocity(){
