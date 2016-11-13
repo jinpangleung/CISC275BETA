@@ -1,5 +1,5 @@
 package model.grid.griditem.trailitem;
 
-public class Oyster {
+public class Oyster extends TrailItem{
 	
 }
