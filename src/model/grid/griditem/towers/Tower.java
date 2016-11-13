@@ -6,6 +6,8 @@ import model.drawing.Offset;
 import model.grid.GridColor;
 import model.grid.gridcell.GridPosition;
 import model.grid.griditem.GridItem;
+import model.grid.griditem.trailitem.TrailItem;
+import model.gui.touch.Touch;
 /**
  * A Tower is an abstract object that extends GridItem. 
  * 
@@ -80,6 +82,21 @@ public abstract class Tower extends GridItem {
 	//// Methods ////
 	public void ability(){
 		
+	}
+	
+	public void release(){
+		GridItem gi = Touch.unClamp();
+		if(gi instanceof TrailItem){
+			if(gi.getColor()==this.getColor()){
+				//DO SOMETHING
+			}
+			else{
+				//snap()
+			}
+		}
+		else{
+			//snap()
+		}
 	}
 	
 //	@Override
