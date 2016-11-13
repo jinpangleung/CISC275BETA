@@ -1,5 +1,5 @@
 package model.grid.griditem.trailitem;
 
-public class InvasiveItem {
+public class InvasiveItem extends TrailItem{
 	
 }
