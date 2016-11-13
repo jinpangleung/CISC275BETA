@@ -66,7 +66,7 @@ public class Touch {
 		this.nullObject = nullObject;
 	}
 
-	public boolean isHolding() {
+	public static boolean isHolding() {
 		return isHolding;
 	}
 
