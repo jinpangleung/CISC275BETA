@@ -34,8 +34,10 @@ public class Touch {
 		this.holding = objectToBeClamped;
 	}
 	
-	public void unClamp(){
+	public DrawableObject unClamp(){
+		DrawableObject d = holding;
 		holding = nullObject;
+		return DrawableObject;
 	}
 	
 	public void draw(Graphics g){
