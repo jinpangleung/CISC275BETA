@@ -14,6 +14,10 @@ public class Velocity {
 	private double x;
 	private double y;
 	
+	public Velocity(double d, double e) {
+		this.x = d;
+		this.y = e;
+	}
 	public double getX() {
 		return x;
 	}

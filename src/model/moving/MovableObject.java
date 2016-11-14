@@ -31,7 +31,7 @@ public abstract class MovableObject extends GridItem {
 		Acceleration a = Grid.getInstance().getAcceleration(this.getGridPosition());//grabs acceleration of current
 		double ax = a.getX();//for specifics
 		double ay = a.getY();
-		Velocity v = Grid.getInstance().getVelocity(this.getGridPosition());//grabs acceleration of current
+		Velocity v = this.getVelocity();//grabs velocity of current
 		double vx = v.getX();//for specifics
 		double vy = v.getY();
 		
@@ -55,7 +55,8 @@ public abstract class MovableObject extends GridItem {
 		//TODO-check if goes into next grid, if yes update grid position.		
 		//get grid position for checking block
 		//get coor position for checking pixel
-		GridPosition gridPos = Grid.getGridPosition(coord);
+		//GridPosition gridPos = Grid.getGridPosition(coord);
+		this.setGridPosition(Grid.getInstance().getGridPosition(this.getCoord()));
 		
 		
 	}
