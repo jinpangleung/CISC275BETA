@@ -1,0 +1,81 @@
+package model.moving;
+
+import model.drawing.Animation;
+import model.drawing.Coord;
+import model.drawing.DrawableObject;
+import model.grid.Grid;
+import model.grid.gridcell.GridPosition;
+import model.grid.griditem.GridItem;
+
+/**
+ * MovableObject
+ * An Object that can be moved
+ * Needs to have a velocity to dictate movement
+ * A MovableObject is also a DrawableObject
+ * @see DrawableObject
+ * @author Eric
+ *
+ */
+
+public abstract class MovableObject extends GridItem {
+
+	public MovableObject(Coord coord, Animation animation, GridPosition gridPosition, Velocity velocity) {
+		super(coord, animation, gridPosition);
+		this.velocity = velocity;
+	}
+
+	private Velocity velocity;
+	final double MAXVELOCITY = Grid.getSize()/50;
+	
+	public void move(long elapsedTime){
+		Acceleration a = Grid.getInstance().getAcceleration(this.getGridPosition());//grabs acceleration of current
+		double ax = a.getX();//for specifics
+		double ay = a.getY();
+		Velocity v = Grid.getInstance().getVelocity(this.getGridPosition());//grabs acceleration of current
+		double vx = v.getX();//for specifics
+		double vy = v.getY();
+		
+		//specifics for readability, xx and yy represent acceleration + velocity which is velocity
+		double xx =  ax + vx;
+		double yy = ay + vy;
+		
+		//changes velocity
+		v.setX(xx);
+		v.setY(yy);
+		
+		//coordinate for positon
+		double cx = this.getCoord().getX(); 
+		double cy = this.getCoord().getY();
+		
+		//calculations for coordinate
+		cx = cx + (xx * elapsedTime);
+		cy = cy + (yy * elapsedTime);
+		
+		
+		//TODO-check if goes into next grid, if yes update grid position.		
+		//get grid position for checking block
+		//get coor position for checking pixel
+		GridPosition gridPos = Grid.getGridPosition(coord);
+		
+		
+	}
+	//eventually move code from move() to this for readability
+	public void updateVelocity(){
+		//nothing yet
+	}
+	//eventually move code from move() to this for readability
+	public void applyVelocity(){
+		//nothing yet
+	}
+	
+	public Velocity getVelocity(){
+		return velocity;
+	}
+	
+	public void setVelocity(Velocity velocity){
+		this.velocity = velocity;
+	}
+	
+	
+
+}
