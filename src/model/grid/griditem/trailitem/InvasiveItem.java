@@ -5,8 +5,8 @@ import model.*;
 import model.drawing.Animation;
 import model.drawing.Coord;
 import model.grid.Grid.*;
-import model.grid.GridColor;
 import model.grid.gridcell.GridPosition;
+import model.grid.griditem.GridColor;
 import model.moving.Velocity;
 
 /**

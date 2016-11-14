@@ -2,13 +2,12 @@ package model.grid.griditem.trailitem;
 
 import java.util.Collection;
 
-import com.sun.scenario.effect.Offset;
-
 import model.*;
 import model.drawing.Animation;
 import model.drawing.Coord;
-import model.grid.GridColor;
+import model.drawing.Offset;
 import model.grid.gridcell.GridPosition;
+import model.grid.griditem.GridColor;
 import model.moving.Velocity;
 
 /**

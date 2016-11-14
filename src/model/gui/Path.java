@@ -1,5 +1,9 @@
 package model.gui;
 
+import model.grid.Grid;
+import model.grid.griditem.Coord;
+import model.grid.griditem.GridItem;
+
 /*
  * A Path is used to tell a Grid Items to move from one point of the screen to another
  */

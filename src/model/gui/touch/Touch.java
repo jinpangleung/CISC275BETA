@@ -1,7 +1,9 @@
 package model.gui.touch;
 
 import java.awt.Graphics;
+
 import model.drawing.DrawableObject;
+import model.grid.griditem.Coord;
 
 /**
  * Touch

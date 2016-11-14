@@ -20,7 +20,7 @@ public class GridItem extends DrawableObject {
 		this.gridPosition = gridPosition;
 	}
 
-	private GridPosition gridPosition;
+	protected GridPosition gridPosition;
 	
 	public GridPosition getGridPosition(){
 		return gridPosition;

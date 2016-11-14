@@ -2,12 +2,12 @@ package model.grid.griditem.trailitem;
 
 import java.util.Collection;
 
-import com.sun.scenario.effect.Offset;
-
 import model.*;
+import model.drawing.*;
+import model.drawing.Animation;
 import model.drawing.Coord;
-import model.grid.GridColor;
 import model.grid.gridcell.GridPosition;
+import model.grid.griditem.GridColor;
 import model.moving.Velocity;
 
 /**
@@ -24,7 +24,7 @@ import model.moving.Velocity;
 
 public class Pollutant extends TrailItem{
 
-	public Pollutant(Coord coord, model.drawing.Animation animation, GridPosition gridPosition, Velocity velocity) {
+	public Pollutant(Coord coord, model.model.drawing.Animation animation, GridPosition gridPosition, Velocity velocity) {
 		super(coord, animation, gridPosition, velocity);
 		gridcolor = GridColor.RED;
 		animation = new Animation("pollutant", Offset.CENTER, Offset.CENTER);

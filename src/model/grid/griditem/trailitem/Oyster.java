@@ -2,12 +2,12 @@ package model.grid.griditem.trailitem;
 
 import java.util.Collection;
 
-import drawing.Animation;
-import drawing.Offset;
+import model.drawing.Animation;
+import model.drawing.Offset;
 import model.*;
 import model.drawing.Coord;
-import model.grid.GridColor;
 import model.grid.gridcell.GridPosition;
+import model.grid.griditem.GridColor;
 import model.moving.Velocity;
 
 /**
@@ -25,7 +25,7 @@ import model.moving.Velocity;
 
 public class Oyster extends TrailItem{
 
-	public Oyster(Coord coord, model.drawing.Animation animation, GridPosition gridPosition, Velocity velocity) {
+	public Oyster(Coord coord, model.model.drawing.Animation animation, GridPosition gridPosition, Velocity velocity) {
 		super(coord, animation, gridPosition, velocity);
 		gridcolor = GridColor.BLUE;
 		animation = new Animation("oyster", Offset.CENTER, Offset.CENTER);

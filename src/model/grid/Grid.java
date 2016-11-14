@@ -6,7 +6,9 @@ import model.*;
 
 import model.grid.gridcell.GridCell;
 import model.grid.griditem.GridItem;
+import model.grid.griditem.tower.Tower;
 import model.grid.griditem.trailitem.TrailItem;
+import model.gui.Path;
 import model.gui.touch.Touch;
 
 
