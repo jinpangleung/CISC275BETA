@@ -1,12 +1,10 @@
 package model.grid.griditem.towers;
 
-import com.sun.prism.paint.Color;
-
 import model.drawing.Animation;
 import model.drawing.Coord;
 import model.drawing.Offset;
-import model.grid.GridColor;
 import model.grid.gridcell.GridPosition;
+import model.grid.griditem.GridColor;
 import model.grid.griditem.GridItem;
 import model.grid.griditem.trailitem.Oyster;
 import model.grid.griditem.trailitem.TrailItem;
@@ -14,7 +12,7 @@ import model.gui.touch.Touch;
 /**
  * A Tower is an abstract object that extends GridItem. 
  * 
- * @author leung
+ * @author leung, Eric
  * @version 1
  * @attributes GridColor - Color on the grid
  * @attributes cooldownRemaining - Cooldown for tower
@@ -26,28 +24,15 @@ import model.gui.touch.Touch;
 public abstract class Tower extends GridItem {
 
 	////Attributes ////
-	protected GridColor gridColor;
-	protected int cooldownRemaining;
+	protected long cooldownRemaining;
 	protected int range;
-//	protected Coord loc;
-//	protected Animation ani;
-//	protected GridPosition gridPos;
 	
-	public Tower(Coord coord, Animation animation, GridPosition gridPosition) {
-		super(coord, animation, gridPosition);
-//		loc = coord;
-//		ani = animation;
-//		gridPos = gridPosition;
-		
+	public Tower(Coord coord) {
+		super(coord, new Animation(), new GridPosition(0, 0));
 		
 	}
 	
-	////  Getters  ////
-	public GridColor getColor(){
-		return this.gridColor;
-	}
-	
-	public int getCooldownRemaining(){
+	public long getCooldownRemaining(){
 		return this.cooldownRemaining;
 	}
 	
@@ -56,7 +41,7 @@ public abstract class Tower extends GridItem {
 	}
 	
 	
-	public void setCooldownRemaining(int cd){
+	public void setCooldownRemaining(long cd){
 		this.cooldownRemaining = cd;
 	}
 	
@@ -69,14 +54,14 @@ public abstract class Tower extends GridItem {
 	
 	public String toString(){
 		String str = "";
-		switch(gridColor){
+		switch(getGridColor()){
 		case RED: str += "Red Tower "; break;
 		case BLUE: str += "Blue Tower "; break;
 		case GREEN: str += "Green Tower "; break;
 		default: str += "Undefined Color Tower "; break;
 		}
 		str += "Grid Posn: " + gridPosition.toString() + " Pixel Posn " + coord.toString() + " ";
-		str += "Cooldown Remaining = " + Integer.toString(cooldownRemaining);
+		str += "Cooldown Remaining = " + Long.toString(cooldownRemaining);
 		return str;
 	}
 	
@@ -88,28 +73,28 @@ public abstract class Tower extends GridItem {
 	}
 	
 	public void release(){
-		if(Touch.isHolding()){
-			GridItem gi = Touch.unClamp();
+		if(Touch.getInstance().isHolding()){
+			GridItem gi = Touch.getInstance().unClamp();
 			if(gi instanceof TrailItem){
-				if(gi.getColor()==this.getColor() || gi.getColor() == GridColor.WHITE){
-					Tower.react(gi, this.getColor());
+				if(gi.getGridColor()==this.getGridColor() || gi.getGridColor() == GridColor.WHITE){
+					this.react(gi, this.getGridColor());
 				}
 				else{
-					Tower.snap(gi, Touch.getCoord());
+					Tower.snap(gi, Touch.getInstance().getStartPosition());
 				}
 			}
 			else{
-				Tower.snap(gi, Touch.getCoord());
+				Tower.snap(gi, Touch.getInstance().getStartPosition());
 			}
 		}
 	}
 	
 	public static void snap(GridItem gridI, Coord dest){
-		gridI.setCoord(dest);
+		//gridI.setCoord(dest);
 	}
 	
-	public static void react(GridItem gi, GridColor towerColor){
-		if(gi.getColor() == towerColor){
+	public void react(GridItem gi, GridColor towerColor){
+		if(gi.getGridColor() == towerColor){
 			if(gi instanceof Oyster){
 				//ADD OYSTER
 			}
@@ -122,13 +107,13 @@ public abstract class Tower extends GridItem {
 		}
 	}
 	
-//	@Override
-//	public void update(){
-//		//TODO update should probably pass around elapsedTickTime, add after controller is implemented - Gifan
-//		if(cooldownRemaining > 0){
-//			cooldownRemaining--;
-//		} else {
-//			ability();
-//		}
-//	}
+	@Override
+	public void update(long elapsedTime){
+		//TODO update should probably pass around elapsedTickTime, add after controller is implemented - Gifan
+		if(cooldownRemaining > 0){
+			cooldownRemaining -= elapsedTime;
+		} else {
+			ability();
+		}
+	}
 }
