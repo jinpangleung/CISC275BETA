@@ -3,12 +3,13 @@ package model.gui.touch;
 import java.awt.Graphics;
 
 import model.drawing.DrawableObject;
-import model.grid.griditem.Coord;
+import model.grid.griditem.GridItem;
+import model.drawing.Coord;
 
 /**
  * Touch
- * Touch keeps a pointer to a DrawableObject
- * Touch is exclusively used for dragging DrawableObjects around the screen
+ * Touch keeps a pointer to a GridItem
+ * Touch is exclusively used for dragging GridItems around the screen
  * Touch needs to be explicitly told when to pick something up and when to drop something using clamp and unClamp
  * The Touch pointer should never be null, because Touch should be able to draw the object it's holding
  * 
@@ -18,32 +19,37 @@ import model.grid.griditem.Coord;
 
 public class Touch {
 	
-	private DrawableObject holding;
-	private DrawableObject nullObject;
+	private GridItem holding;
+	private GridItem nullObject;
 	private boolean isHolding;
-	private static Coord coord;
+	private Coord startPosition;
+	private static Touch instance;
 	
 	public Touch(){
 		nullObject = new DefaultTouchObject();
 		holding = nullObject;
 		isHolding = false;
+		startPosition = new Coord(0, 0);
+		instance = this;
+	}
+	
+	public static Touch getInstance(){
+		return instance;
 	}
 	
 	public void mouseDragged(int mouseX, int mouseY){
 		this.holding.setCoord(mouseX, mouseY);
 	}
 	
-	public void clamp(DrawableObject objectToBeClamped){
+	public void clamp(GridItem objectToBeClamped){
 		this.holding = objectToBeClamped;
-		this. coord = obejctToBeClamped.getCoord();
-		this.isHolding = true;
+		this.startPosition = objectToBeClamped.getCoord();
 	}
 	
-	public DrawableObject unClamp(){
-		DrawableObject d = holding;
+	public GridItem unClamp(){
+		GridItem gi = holding;
 		holding = nullObject;
-		this.isHolding = false;
-		return DrawableObject;
+		return gi;
 	}
 	
 	public void draw(Graphics g){
@@ -54,11 +60,11 @@ public class Touch {
 		return holding;
 	}
 	
-	public static Coord getCoord(){
-		return coord;
-	} 
+	public Coord getStartPosition(){
+		return startPosition;
+	}
 
-	public void setHolding(DrawableObject holding) {
+	public void setHolding(GridItem holding) {
 		this.holding = holding;
 	}
 
@@ -66,11 +72,11 @@ public class Touch {
 		return nullObject;
 	}
 
-	public void setNullObject(DrawableObject nullObject) {
+	public void setNullObject(GridItem nullObject) {
 		this.nullObject = nullObject;
 	}
 
-	public static boolean isHolding() {
+	public boolean isHolding() {
 		return isHolding;
 	}
 
