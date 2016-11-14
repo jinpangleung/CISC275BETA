@@ -44,11 +44,13 @@ public class Touch {
 	public void clamp(GridItem objectToBeClamped){
 		this.holding = objectToBeClamped;
 		this.startPosition = objectToBeClamped.getCoord();
+		this.isHolding = true;
 	}
 	
 	public GridItem unClamp(){
 		GridItem gi = holding;
 		holding = nullObject;
+		this.isHolding = false;
 		return gi;
 	}
 	
