@@ -36,11 +36,13 @@ public class Touch {
 	public void clamp(DrawableObject objectToBeClamped){
 		this.holding = objectToBeClamped;
 		this. coord = obejctToBeClamped.getCoord();
+		this.isHolding = true;
 	}
 	
 	public DrawableObject unClamp(){
 		DrawableObject d = holding;
 		holding = nullObject;
+		this.isHolding = false;
 		return DrawableObject;
 	}
 	
