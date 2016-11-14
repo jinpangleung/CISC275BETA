@@ -69,48 +69,48 @@ public class Difficulty {
 		if(randomNum == 0){
 			oysterCount++;
 			if (timeToSpawn < 90 && oysterCount < 4){
-				return new Oyster();//need to change speed(slower) or spawn rate(more)
+				return new Oyster();//need to change speed(slower) or spawn rate
 			}
 			else if(timeToSpawn < 90 && oysterCount > 6){
-				return new Oyster();//need to change speed(faster) or spawn rate(less)
+				return new Oyster();//need to change speed(faster) or spawn rate
 			}
 			if (timeToSpawn < 30 && oysterCount < 12){
-				return new Oyster();//need to change speed(slower) or spawn rate(more)
+				return new Oyster();//need to change speed(slower) or spawn rate
 			}
 			else if (timeToSpawn < 30 && oysterCount > 16){
-				return new Oyster();//need to change speed(faster) or spawn rate(less)
+				return new Oyster();//need to change speed(faster) or spawn rate
 			}
 			return new Oyster();
 		}
 		else if (randomNum == 1){
 			invasiveCount++;
 			if (timeToSpawn < 90 && invasiveCount < 4){
-				return new InvasiveItem();//need to change speed(slower) or spawn rate(more)
+				return new InvasiveItem();//need to change speed(slower) or spawn rate
 			}
 			else if(timeToSpawn < 90 && invasiveCount > 6){
-				return new InvasiveItem();//need to change speed(faster) or spawn rate(less)
+				return new InvasiveItem();//need to change speed(faster) or spawn rate
 			}
 			if (timeToSpawn < 30 && invasiveCount < 12){
-				return new InvasiveItem();//need to change speed(slower) or spawn rate(more)
+				return new InvasiveItem();//need to change speed(slower) or spawn rate
 			}
 			else if (timeToSpawn < 30 && invasiveCount > 16){
-				return new InvasiveItem();//need to change speed(faster) or spawn rate(less)
+				return new InvasiveItem();//need to change speed(faster) or spawn rate
 			}
 			return new InvasiveItem();
 		}
 		else if (randomNum == 2){
 			larvaeCount++;
 			if (timeToSpawn < 90 && larvaeCount < 4){
-				return new Oyster();//need to change speed(slower) or spawn rate(more)
+				return new Oyster();//need to change speed(slower) or spawn rate
 			}
 			else if(timeToSpawn < 90 && larvaeCount > 6){
-				return new Oyster();//need to change speed(faster) or spawn rate(less)
+				return new Oyster();//need to change speed(faster) or spawn rate
 			}
 			if (timeToSpawn < 30 && larvaeCount < 12){
-				return new Oyster();//need to change speed(slower) or spawn rate(more)
+				return new Oyster();//need to change speed(slower) or spawn rate
 			}
 			else if (timeToSpawn < 30 && larvaeCount > 16){
-				return new Oyster();//need to change speed(faster) or spawn rate(less)
+				return new Oyster();//need to change speed(faster) or spawn rate
 			}
 			return new Larvae();
 		}
@@ -119,16 +119,16 @@ public class Difficulty {
 			pollutantCount++;
 			int randomPol = (int)(Math.random() * 2); 
 			if (timeToSpawn < 90 && pollutantCount < 4){
-				return new Pollutant(1);//need to change speed(slower) or spawn rate(more)
+				return new Pollutant(1);//need to change speed(slower) or spawn rate
 			}
 			else if(timeToSpawn < 90 && pollutantCount > 6){
-				return new Pollutant(3);//need to change speed(faster) or spawn rate(less)
+				return new Pollutant(3);//need to change speed(faster) or spawn rate
 			}
 			if (timeToSpawn < 30 && pollutantCount < 12){
-				return new Pollutant(1);//need to change speed(slower) or spawn rate(more)
+				return new Pollutant(1);//need to change speed(slower) or spawn rate
 			}
 			else if (timeToSpawn < 30 && pollutantCount > 16){
-				return new Pollutant(3);//need to change speed(faster) or spawn rate(less)
+				return new Pollutant(3);//need to change speed(faster) or spawn rate
 			}
 			if(randomPol == 0){
 				return new Pollutant(1);
