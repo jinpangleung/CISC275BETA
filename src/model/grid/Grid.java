@@ -6,14 +6,18 @@ import model.*;
 
 import model.grid.gridcell.GridCell;
 import model.grid.griditem.GridItem;
-import model.grid.griditem.tower.Tower;
+import model.grid.griditem.gabion.Gabion;
+import model.grid.griditem.towers.Tower;
 import model.grid.griditem.trailitem.TrailItem;
 import model.gui.Path;
+import model.gui.component.Component;
+import model.gui.component.ComponentPosition;
 import model.gui.touch.Touch;
 
 
 ///////////////HAS LOTS OF ERRORS, WILL DEBUG AFTER ALL CLASSES ARE IMPLEMENTED/////////////
-public class Grid {
+// Fixed the errors for now, but Grid has a lot going on, will look into finishing it later - Eric
+public class Grid extends Component {
 	
 	private Collection<GridItem> items;
 	private Collection<Tower> towers;
@@ -23,39 +27,20 @@ public class Grid {
 	private Difficulty difficulty;
 	private Touch touch;
 	
-	static private Grid grid = null;
+	static private Grid grid;
 	//// Attributes ////
 	
 	static public Grid getInstance(){
-		if(grid == null){
-			grid = new Grid();
-		}
 		return grid;
 	}
 	
 	//// Constructor ////
 	public Grid(){
-		Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-		cells = new DirectionGrid();
-		System.out.println(cells);
-		items = new ArrayList<GridItem>();
-		towers = new ArrayList<Tower>();
-		trailItems = new ArrayList<TrailItem>();
-		gabions = new ArrayList<Gabion>();
-		paths = new ArrayList<Path>();
-		difficulty = new Difficulty();
-		new ImageLibrary();
-		touch = new Touch();
-		towerComponent = new Structures((int) d.getWidth(), (int) d.getHeight(), pixelGrid);
+		super(new ComponentPosition(0, 0), 0, 0);
+		grid = this;
 	}
 	
 	//// Getters and Setters ////
-	public Structures getTowerComponent(){
-		return towerComponent;
-	}
-	public DirectionGrid getCells(){
-		return cells;
-	}
 	public Collection<GridItem> getItems(){
 		return items;
 	}
@@ -68,9 +53,4 @@ public class Grid {
 	public Collection<Gabion> getGabions(){
 		return gabions;
 	}
-	public int getGridSize(){
-		return cells.getGridSize();
-	}
-	
-
 }
