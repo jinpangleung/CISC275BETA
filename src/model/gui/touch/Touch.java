@@ -93,4 +93,9 @@ public class Touch {
 		return str;
 	}
 
+	public void snap() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
