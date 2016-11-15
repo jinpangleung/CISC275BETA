@@ -13,7 +13,7 @@ import model.moving.Velocity;
  * 
  * InvasiveItem are creatures that's bad for the estuary, you are supposed to pick them up from river
  * 
- * @author Roy Cheng
+ * @author Roy Cheng, Eric
  * @version 1
  * @attributes health - health of the trailitems
  * @attributes speed - how fast they travel in the river
@@ -25,7 +25,7 @@ public class InvasiveItem extends TrailItem{
 
 	public InvasiveItem(Coord coord, Animation animation, GridPosition gridPosition, Velocity velocity) {
 		super(coord, animation, gridPosition, velocity);
-		gridcolor = GridColor.GREEN;
+		setGridColor(GridColor.GREEN);
 		
 	}
 	
