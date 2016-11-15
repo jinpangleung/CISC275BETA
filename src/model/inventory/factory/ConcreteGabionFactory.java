@@ -1,7 +1,7 @@
 package model.inventory.factory;
 
-import model.grid.griditem.Coord;
-import model.gui.component.ComponentPosition;
+import model.drawing.Coord;
+import model.grid.griditem.gabion.ConcreteGabion;
 import model.gui.touch.Touch;
 
 /**
