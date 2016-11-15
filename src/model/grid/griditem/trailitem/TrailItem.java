@@ -8,7 +8,8 @@ import model.drawing.Coord;
 import model.grid.Grid;
 import model.grid.gridcell.GridPosition;
 import model.grid.griditem.GridColor;
-import model.grid.griditem.tower.Tower;
+import model.grid.griditem.towers.Tower;
+import model.gui.touch.Touch;
 import model.moving.MovableObject;
 import model.moving.Velocity;
 
@@ -17,28 +18,22 @@ import model.moving.Velocity;
  * A TrailItem is a GridItem that moves along with the direction of the GridCells
  * They can be picked up via the Grid's mouse handlers
  * 
- * @author Roy
+ * @author Roy, Eric
  *
  */
 
 public class TrailItem extends MovableObject {
 	
-	protected GridColor gridcolor;
-	
 	public TrailItem(Coord coord, Animation animation, GridPosition gridPosition, Velocity velocity) {
 		super(coord, animation, gridPosition, velocity);
 	}
 	
-	public GridColor getColor(){
-		return this.gridcolor;
-	}
-	
 	public void click(){
 		Collection<Tower> TI = Grid.getInstance().getTowers();
-		for (Tower a:TI){
-			if (a.getColor() == this.getColor()){
-				if (isInRange(a.getCoord())){
-					Model.getInstance().getTouch().Clamp(a);					
+		for (Tower a : TI){
+			if (a.getGridColor() == this.getGridColor()){
+				if (a.isInRange(this.getCoord())){
+					Touch.getInstance().clamp(a);					
 				}
 			}
 			else{
