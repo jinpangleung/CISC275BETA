@@ -69,7 +69,7 @@ public class Board {
 		return getGridCell(gp.getX(),gp.getY());
 	}
 	public int getSquareSize(){
-		
+		return Grid.getInstance().getTotalPixels() / (Grid.getInstance().getSquareWidth() * Grid.getInstance().getSquareWidth());
 	}
 	public class DirectionGrid {
 		
