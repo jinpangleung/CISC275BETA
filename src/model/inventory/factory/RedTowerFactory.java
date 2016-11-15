@@ -30,14 +30,13 @@ public class RedTowerFactory extends TowerFactory {
 		// If applicable, clamp new tower to touch
 		if(remainingRedTower > 0){
 			remainingRedTower -= 1;
-			Touch.clamp(new RedTower(new Coord(topLeft.getX(), topLeft.getY())));
+			Touch.getInstance().clamp(new RedTower(new Coord(topLeft.getX(), topLeft.getY())));
 		}
 	}
 	
 	@Override
 	public void mouseReleased(int mouseX, int mouseY){
-		// Do nothing
-		Touch.snap();
+		Touch.getInstance().snap();
 	}
 
 }

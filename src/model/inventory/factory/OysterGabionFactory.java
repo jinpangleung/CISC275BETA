@@ -31,14 +31,14 @@ public class OysterGabionFactory extends TowerFactory {
 		// If applicable, clamp new tower to touch
 		if(oysters >= OYSTERS_PER_GABION){
 			oysters -= OYSTERS_PER_GABION;
-			Touch.clamp(new OysterGabion(new Coord(topLeft.getX(), topLeft.getY())));
+			Touch.getInstance().clamp(new OysterGabion(new Coord(topLeft.getX(), topLeft.getY())));
 		}
 	}
 	
 	@Override
 	public void mouseReleased(int mouseX, int mouseY){
 		// Do nothing
-		Touch.snap();
+		Touch.getInstance().snap();
 	}
 
 }

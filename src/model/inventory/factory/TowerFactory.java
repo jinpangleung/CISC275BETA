@@ -5,6 +5,8 @@ import model.gui.component.ComponentPosition;
 
 public abstract class TowerFactory extends Component {
 	
+	private int towerCount;
+	
 	public TowerFactory(ComponentPosition topLeft, int width, int height){
 		super(topLeft, width, height);
 	}
@@ -22,5 +24,11 @@ public abstract class TowerFactory extends Component {
 	public void mouseReleased(int mouseX, int mouseY){
 		// Do nothing
 	}
+	
+	public void increaseTowerCount(){
+		towerCount++;
+	}
+	
+	
 
 }
