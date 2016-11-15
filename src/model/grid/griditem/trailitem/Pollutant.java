@@ -14,7 +14,7 @@ import model.moving.Velocity;
  * 
  * Pollutant are stuff that's bad for the estuary, you are supposed to pick them up.
  * 
- * @author Roy Cheng
+ * @author Roy Cheng, Eric
  * @version 1
  * @attributes health - health of the trailitems
  * @attributes speed - how fast they travel in the river
@@ -24,9 +24,9 @@ import model.moving.Velocity;
 
 public class Pollutant extends TrailItem{
 
-	public Pollutant(Coord coord, model.model.drawing.Animation animation, GridPosition gridPosition, Velocity velocity) {
+	public Pollutant(Coord coord, Animation animation, GridPosition gridPosition, Velocity velocity) {
 		super(coord, animation, gridPosition, velocity);
-		gridcolor = GridColor.RED;
+		setGridColor(GridColor.RED);
 		animation = new Animation("pollutant", Offset.CENTER, Offset.CENTER);
 	}
 	
