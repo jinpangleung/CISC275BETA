@@ -65,6 +65,9 @@ public class Board {
 	public GridCell getGridCell(int x, int y){
 		return gridCell[x][y];
 	}
+	public GridCell getGridPosition(GridPosition gp){
+		return getGridCell(gp.getX(),gp.getY());
+	}
 	public int getSquareSize(){
 		
 	}
