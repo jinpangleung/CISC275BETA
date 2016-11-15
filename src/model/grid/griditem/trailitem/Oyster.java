@@ -15,7 +15,7 @@ import model.moving.Velocity;
  * Oyster is thing that you want to pick up, and when you picked up enough oysters you can build a oyster
  * gabion
  * 
- * @author Roy Cheng
+ * @author Roy Cheng, Eric
  * @version 1
  * @attributes health - health of the trailitems
  * @attributes speed - how fast they travel in the river
@@ -25,9 +25,9 @@ import model.moving.Velocity;
 
 public class Oyster extends TrailItem{
 
-	public Oyster(Coord coord, model.model.drawing.Animation animation, GridPosition gridPosition, Velocity velocity) {
+	public Oyster(Coord coord, Animation animation, GridPosition gridPosition, Velocity velocity) {
 		super(coord, animation, gridPosition, velocity);
-		gridcolor = GridColor.BLUE;
+		setGridColor(GridColor.BLUE);
 		animation = new Animation("oyster", Offset.CENTER, Offset.CENTER);
 	}
 
