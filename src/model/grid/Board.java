@@ -15,7 +15,7 @@ import model.grid.gridcell.GridPosition;
 public class Board {
 	
 	private GridCell[][] gridCell;
-	private int gridSizeX;
+	private static int gridSizeX; //TODO CHANGE BACK TO NOT STATIC WHEN YOU FIX THE THING DOWN BELOW
 	private int gridSizeY;
 	
 	// Constructor
@@ -68,8 +68,9 @@ public class Board {
 	public GridCell getGridPosition(GridPosition gp){
 		return getGridCell(gp.getX(),gp.getY());
 	}
-	public int getSquareSize(){
-		return Grid.getInstance().getTotalPixels() / (Grid.getInstance().getSquareWidth() * Grid.getInstance().getSquareWidth());
+	public static int getSquareSize(){ //TODO: FIX THIS RETURN STATEMENT
+		return gridSizeX;
+		
 	}
 	public class DirectionGrid {
 		
