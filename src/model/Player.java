@@ -7,6 +7,8 @@ public class Player {
 	private long startTime;
 	private long gameTime;
 	private int oysterCount;
+	private Storm storm;
+	private int stormNum;
 	
 	static private Player player;
 	public Player(){
@@ -14,6 +16,8 @@ public class Player {
 		startTime = System.currentTimeMillis();
 		gameTime = 0;
 		player = this;
+		this.storm = new Storm();
+		stormNum = 0;
 	}
 	
 	static public Player getInstance(){
@@ -40,8 +44,8 @@ public class Player {
 		this.gameTime = gameTime;
 	}
 	
-	public void update() {
-		gameTime = System.currentTimeMillis() - startTime;
+	public void update(long timeElapsed) {
+		gameTime += timeElapsed;
 	}
 	
 	
