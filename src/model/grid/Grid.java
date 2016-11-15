@@ -118,7 +118,7 @@ public class Grid extends Component {
 		
 	}
 	
-		public Acceleration getAcceleration(GridPosition gridPosition, long elapsedTime) {
+	public Acceleration getAcceleration(GridPosition gridPosition, long elapsedTime) {
 		Direction dir = board.getGridCell(gridPosition.getX(), gridPosition.getY()).getDirection();
 		Acceleration acc = new Acceleration(0,0);
 		double dg = 1/(Math.sqrt(2));
