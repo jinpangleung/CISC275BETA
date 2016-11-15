@@ -28,9 +28,4 @@ public class RedTower extends Tower {
 		range = 10;
 		animation = new Animation("pollutant_tower", Offset.CENTER, Offset.CENTER);
 	}
-
-	@Override
-	public void ability(){
-		System.out.println(gridColor + " active");
-	}
 }
