@@ -5,13 +5,13 @@ public class GridCell {
 	
 	private GridPosition gridPosition;
 	public boolean isTrail;
-	public boolean isLand;
+	//public boolean isLand;
 	public Direction direction;
 	
-	public GridCell(GridPosition g, boolean isT, boolean isL, Direction d){
+	public GridCell(GridPosition g, boolean isT, Direction d){//boolean isL
 		this.gridPosition = g;
 		this.isTrail = isT;
-		this.isLand = isL;
+		//this.isLand = isL; probably dont need this, if its not the trail then its the land.
 		this.direction = d;
 	}
 
@@ -39,13 +39,13 @@ public class GridCell {
 		this.isTrail = isTrail;
 	}
 
-	public boolean isLand() {
-		return isLand;
-	}
-
-	public void setLand(boolean isLand) {
-		this.isLand = isLand;
-	}
+//	public boolean isLand() {
+//		return isLand;
+//	}
+//
+//	public void setLand(boolean isLand) {
+//		this.isLand = isLand;
+//	}
 	public String toString(){
 		String str = "";
 		switch(direction){
@@ -57,6 +57,7 @@ public class GridCell {
 		case SOUTHWEST: str += "South West"; break;
 		case NORTHEAST: str += "North East"; break;
 		case NORTHWEST: str += "North West"; break;
+		default: str += "Something is wrong with direction..."; break;
 		}
 		return str;
 	}
