@@ -4,9 +4,9 @@ package model.grid.gridcell;
 public class GridCell {
 	
 	private GridPosition gridPosition;
-	public boolean isTrail;
+	private boolean isTrail;
 	//public boolean isLand;
-	public Direction direction;
+	private Direction direction;
 	
 	public GridCell(GridPosition g, boolean isT, Direction d){//boolean isL
 		this.gridPosition = g;
