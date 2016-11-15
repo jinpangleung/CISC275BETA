@@ -62,10 +62,10 @@ public class Board {
 		return gridSizeY;
 		
 	}
-	public int getSquareSize(){
-		
+	public GridCell getGridCell(int x, int y){
+		return gridCell[x][y];
 	}
-	public int getGridCell(int x, int y){
+	public int getSquareSize(){
 		
 	}
 	public class DirectionGrid {
