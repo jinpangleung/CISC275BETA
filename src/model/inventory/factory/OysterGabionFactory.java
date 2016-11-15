@@ -1,6 +1,7 @@
 package model.inventory.factory;
 	
-import model.grid.griditem.Coord;
+import model.drawing.Coord;
+import model.grid.griditem.gabion.OysterGabion;
 import model.gui.component.ComponentPosition;
 import model.gui.touch.Touch;
 
