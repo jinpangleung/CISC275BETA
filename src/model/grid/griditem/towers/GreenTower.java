@@ -27,8 +27,4 @@ public class GreenTower extends Tower{
 		animation = new Animation("invasive_item_tower", Offset.CENTER, Offset.CENTER);
 	}
 	
-	@Override
-	public void ability(){
-		System.out.println(gridColor + " active");
-	}
 }
