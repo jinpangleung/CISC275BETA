@@ -1,5 +1,6 @@
 package model.grid.gridcell;
-
+// A spot on the underlying Grid of the game
+// Mostly controls direction of the water flowing
 public class GridCell {
 	
 	private GridPosition gridPosition;
