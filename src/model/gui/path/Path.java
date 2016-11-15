@@ -1,6 +1,7 @@
 package model.gui.path;
 
 import model.drawing.Coord;
+import model.grid.Grid;
 import model.grid.griditem.GridItem;
 import model.moving.Velocity;
 
@@ -37,6 +38,12 @@ public class Path {
 		this.posX = this.velocity.getX() >= 0;
 		this.posY = this.velocity.getY() >= 0;
 		
+	}
+	
+	public static void snap(GridItem gi, Coord destination, PathBehavior termination){
+		Path p = new Path(gi, destination, termination);
+		p.initializeSpeed();
+		Grid.getInstance().addPath(p);
 	}
 	
 	public void update(long elapsedTime){
