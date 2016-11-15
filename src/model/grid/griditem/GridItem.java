@@ -21,6 +21,7 @@ public class GridItem extends DrawableObject {
 	}
 
 	protected GridPosition gridPosition;
+	protected GridColor gridColor;
 	
 	public GridPosition getGridPosition(){
 		return gridPosition;
@@ -28,6 +29,19 @@ public class GridItem extends DrawableObject {
 	
 	public void setGridPosition(GridPosition gp){
 		this.gridPosition = gp;
+	}
+	
+	public GridColor getGridColor(){
+		return gridColor;
+	}
+	
+	public void setGridColor(GridColor gc){
+		this.gridColor = gc;
+	}
+
+	public void update(long elapsedTime) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
