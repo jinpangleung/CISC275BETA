@@ -105,7 +105,6 @@ public abstract class Tower extends GridItem {
 	
 	@Override
 	public void update(long elapsedTime){
-		//TODO update should probably pass around elapsedTickTime, add after controller is implemented - Gifan
 		if(cooldownRemaining > 0){
 			cooldownRemaining -= elapsedTime;
 		}
