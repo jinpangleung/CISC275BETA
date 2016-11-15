@@ -51,12 +51,16 @@ public abstract class MovableObject extends GridItem {
 		cx = cx + (xx * elapsedTime);
 		cy = cy + (yy * elapsedTime);
 		
+		//setting coordinates
+		this.getCoord().setX(cx);
+		this.getCoord().setY(cy);
+		
 		
 		//TODO-check if goes into next grid, if yes update grid position.		
 		//get grid position for checking block
 		//get coor position for checking pixel
 		//GridPosition gridPos = Grid.getGridPosition(coord);
-		this.setGridPosition(Grid.getInstance().getGridPosition(this.getCoord()));
+		//this.setGridPosition(Grid.getInstance().getGridPosition(this.getCoord()));
 		
 		
 	}
