@@ -27,6 +27,10 @@ public class Model {
 	private int screenHeight;
 	private Grid grid;
 	private Inventory inventory;
+	private Player player;
+	private Storm storm;
+	private int stormNum;
+	
 	
 	public void initialize(int screenWidth, int screenHeight){
 		System.out.println("\tModel is being initialized");
@@ -40,11 +44,19 @@ public class Model {
 		double width = (double) screenHeight * 0.8;
 		this.grid = new Grid(new ComponentPosition((int) offset, (int) offset), (int) width, (int) width);
 		this.componentMapping.addComponent(grid);
+		this.player = new Player();
+		this.storm = new Storm();
+		this.stormNum = 0;
 		System.out.println("\tModel has been initialized");
 	}
 	
 	public void update(long timeElapsed){
 		grid.update(timeElapsed);
+		player.update(timeElapsed);
+		if (player.getGameTime()/1000000000 - stormNum == 1){
+			storm.dealDamage();
+			stormNum++;
+		}		
 	}
 	
 	public void draw(Graphics g){
