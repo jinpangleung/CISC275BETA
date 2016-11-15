@@ -117,4 +117,22 @@ public class Grid extends Component {
 	public void mouseReleased(int mouseX, int mouseY){
 		
 	}
+	
+		public Acceleration getAcceleration(GridPosition gridPosition, long elapsedTime) {
+		Direction dir = board.getGridCell(gridPosition.getX(), gridPosition.getY()).getDirection();
+		Acceleration acc = new Acceleration(0,0);
+		double dg = 1/(Math.sqrt(2));
+		switch(dir){
+			case NORTH: acc.setY(-1);
+			case NORTHEAST: acc.setY(-dg); acc.setY(dg);
+			case NORTHWEST: acc.setY(-dg); acc.setX(-dg);
+			case WEST: acc.setX(-1);
+			case SOUTHWEST: acc.setY(dg); acc.setX(-dg);
+			case SOUTH: acc.setY(1);
+			case SOUTHEAST: acc.setY(dg); acc.setX(dg);
+			case EAST: acc.setX(1);
+			default: System.out.println("ERROR"); break;
+		}
+		return acc;
+	}
 }
