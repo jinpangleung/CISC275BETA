@@ -3,6 +3,7 @@ package model.grid;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 
 import model.*;
 
@@ -72,6 +73,21 @@ public class Grid extends Component {
 	public void addGabion(Gabion g){
 		gabions.add(g);
 		addGridItem(g);
+	}
+	
+	public void addPath(Path p){
+		paths.add(p);
+	}
+	
+	public void removePath(Path p){
+		Iterator<Path> it = paths.iterator();
+		while(it.hasNext()){
+			Path path = it.next();
+			if(p.equals(path)){
+				it.remove();
+				return;
+			}
+		}
 	}
 	
 	//// Getters and Setters ////
