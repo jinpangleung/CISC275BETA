@@ -3,8 +3,11 @@ package model;
 import java.awt.Graphics;
 
 import model.drawing.Animation;
+import model.grid.Grid;
+import model.grid.griditem.trailitem.TrailItem;
 import model.gui.component.*;
 import model.gui.touch.Touch;
+import model.inventory.Inventory;
 
 /**
  * Model
@@ -20,6 +23,10 @@ public class Model {
 	private Component defaultComponent;
 	private ComponentMapping componentMapping;
 	private Touch touch;
+	private int screenWidth;
+	private int screenHeight;
+	private Grid grid;
+	private Inventory inventory;
 	
 	public void initialize(int screenWidth, int screenHeight){
 		System.out.println("\tModel is being initialized");
@@ -27,15 +34,21 @@ public class Model {
 		componentMapping = new ComponentMapping(defaultComponent, screenWidth, screenHeight);
 		Animation.initialize();
 		touch = new Touch();
+		this.screenWidth = screenWidth;
+		this.screenHeight = screenHeight;
+		double offset = (double) screenHeight * 0.1;
+		double width = (double) screenHeight * 0.8;
+		this.grid = new Grid(new ComponentPosition((int) offset, (int) offset), (int) width, (int) width);
+		this.componentMapping.addComponent(grid);
 		System.out.println("\tModel has been initialized");
 	}
 	
 	public void update(long timeElapsed){
-		
+		grid.update(timeElapsed);
 	}
 	
 	public void draw(Graphics g){
-		
+		grid.draw(g);
 	}
 	
 	public void mouseClicked(int mouseX, int mouseY){
