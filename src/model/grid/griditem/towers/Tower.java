@@ -8,6 +8,9 @@ import model.grid.griditem.GridColor;
 import model.grid.griditem.GridItem;
 import model.grid.griditem.trailitem.Oyster;
 import model.grid.griditem.trailitem.TrailItem;
+import model.gui.path.BackToGridBehavior;
+import model.gui.path.Path;
+import model.gui.path.TowerBehavior;
 import model.gui.touch.Touch;
 /**
  * A Tower is an abstract object that extends GridItem. 
@@ -77,11 +80,11 @@ public abstract class Tower extends GridItem {
 					this.react(gi, this.getGridColor());
 				}
 				else{
-					Path.snap(gi, Touch.getInstance().getStartPosition());
+					Path.snap(gi, Touch.getInstance().getStartPosition(), new BackToGridBehavior());
 				}
 			}
-			else{
-				Path.snap(gi, Touch.getInstance().getStartPosition());
+			else if(gi instanceof Tower){
+				Path.snap(gi, Touch.getInstance().getStartPosition(), new TowerBehavior());
 			}
 		}
 	}
