@@ -51,32 +51,9 @@ public class Storm {
 			}
 			
 			if (done == false){
-				//estuary health decreases
+				Player.getInstance().setEstuaryHealth(Player.getInstance().getEstuaryHealth()-100);
 			}
 			
-		}
-		
-		
-		for(Iterator<Gabion> gLoop = gabion.iterator(); gLoop.hasNext();){
-			Gabion gRandom = gLoop.next();
-			if (damage - gRandom.getHealth() >= 0){
-				allItems.remove(this);
-				gabion.remove(this);
-				damage = damage - gRandom.getHealth();
-			}
-			else if (damage - gRandom.getHealth() < 0){
-				gLoop.next().setHealth(gRandom.getHealth() - damage);
-				damage = 0;
-			}
-			else if (damage <= 0){
-				break;
-			}
-		}
-		if (damage > 0){
-			for(Iterator<Tower> loop = tower.iterator(); loop.hasNext();){
-				Tower random = loop.next();
-				random.setCooldownRemaining(damage);
-			}
 		}
 	}
 	
