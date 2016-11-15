@@ -8,4 +8,11 @@ public class OysterGabion extends Gabion{
 	public OysterGabion(Coord coord, Animation animation, GridPosition gridPosition){
 		super(coord, animation, gridPosition);
 	}
+
+    @Override
+    public void takeDamage()
+    {
+        this.setHealth(this.getHealth() - 10);
+        
+    }
 }

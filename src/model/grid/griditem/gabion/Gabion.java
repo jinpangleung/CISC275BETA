@@ -11,9 +11,9 @@ import model.grid.griditem.GridItem;
  *
  */
 
-public class Gabion extends GridItem {
+public abstract class Gabion extends GridItem {
 	
-	int health = 100;
+	private int health = 100;
 
 	public Gabion(Coord coord, Animation animation, GridPosition gridPosition) {
 		super(coord, animation, gridPosition);
@@ -24,9 +24,11 @@ public class Gabion extends GridItem {
 		return health;
 	}
 	
-	public void takeDamage(){
-		health = 0;
+	public void setHealth(int health){
+	    this.health = health;
 	}
+	
+	public abstract void takeDamage();
 	
 	public static void snap(GridItem gridI, Coord dest){
 		gridI.setCoord(dest);

@@ -9,4 +9,11 @@ public class ConcreteGabion extends Gabion {
 	public ConcreteGabion(Coord coord, Animation animation, GridPosition gridPosition){
 		super(coord, animation, gridPosition);
 	}
+
+	@Override
+    public void takeDamage()
+    {
+        this.setHealth(this.getHealth() - 20);
+        
+    }
 }
