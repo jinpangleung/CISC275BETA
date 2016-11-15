@@ -13,7 +13,7 @@ import model.grid.griditem.GridItem;
 
 public class Gabion extends GridItem {
 	
-	int health;
+	int health = 100;
 
 	public Gabion(Coord coord, Animation animation, GridPosition gridPosition) {
 		super(coord, animation, gridPosition);
@@ -22,6 +22,10 @@ public class Gabion extends GridItem {
 	
 	public int getHealth(){
 		return health;
+	}
+	
+	public void takeDamage(){
+		health = 0;
 	}
 	
 	public static void snap(GridItem gridI, Coord dest){
