@@ -28,6 +28,8 @@ public class Grid extends Component {
 	private Collection<Gabion> gabions;
 	private Collection<Path> paths;
 	private Difficulty difficulty;
+	private PixelGrid pixelgrid;
+	private Board board;
 	
 	static private Grid grid;
 	//// Attributes ////
@@ -45,6 +47,8 @@ public class Grid extends Component {
 		this.gabions = new ArrayList<Gabion>();
 		this.paths = new ArrayList<Path>();
 		this.difficulty = new Difficulty();
+		this.board = new Board();
+		this.pixelgrid = new PixelGrid();
 		grid = this;
 	}
 	
