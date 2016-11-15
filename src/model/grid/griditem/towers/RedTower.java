@@ -4,6 +4,7 @@ import model.drawing.Animation;
 import model.drawing.Coord;
 import model.drawing.Offset;
 import model.grid.griditem.*;
+import model.grid.GridColor;
 import model.grid.gridcell.GridPosition;
 
 

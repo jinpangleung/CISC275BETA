@@ -7,7 +7,7 @@ import model.drawing.Offset;
 import model.*;
 import model.drawing.Coord;
 import model.grid.gridcell.GridPosition;
-import model.grid.griditem.GridColor;
+import model.grid.GridColor;
 import model.moving.Velocity;
 
 /**

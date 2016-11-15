@@ -7,7 +7,7 @@ import model.drawing.Animation;
 import model.drawing.Coord;
 import model.grid.Grid;
 import model.grid.gridcell.GridPosition;
-import model.grid.griditem.GridColor;
+import model.grid.GridColor;
 import model.grid.griditem.towers.Tower;
 import model.gui.touch.Touch;
 import model.moving.MovableObject;

@@ -1,6 +1,6 @@
 package model.inventory;
 
-import model.grid.griditem.GridColor;
+import model.grid.GridColor;
 import model.gui.component.ComponentPosition;
 import model.inventory.factory.*;
 

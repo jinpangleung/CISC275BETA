@@ -4,7 +4,7 @@ import model.drawing.Animation;
 import model.drawing.Coord;
 import model.drawing.Offset;
 import model.grid.gridcell.GridPosition;
-import model.grid.griditem.GridColor;
+import model.grid.GridColor;
 import model.grid.griditem.GridItem;
 import model.grid.griditem.trailitem.Oyster;
 import model.grid.griditem.trailitem.TrailItem;
