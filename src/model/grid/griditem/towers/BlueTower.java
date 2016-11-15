@@ -27,9 +27,4 @@ public class BlueTower extends Tower{
 		range = 10;
 		animation = new Animation("oyster_tower", Offset.CENTER, Offset.CENTER);
 	}
-	
-	@Override
-	public void ability(){
-		System.out.println(gridColor + " active");
-	}
 }
