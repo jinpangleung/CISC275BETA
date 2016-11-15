@@ -68,9 +68,6 @@ public abstract class Tower extends GridItem {
 	
 	
 	//// Methods ////
-	public void ability(){
-		
-	}
 	
 	public void release(){
 		if(Touch.getInstance().isHolding()){
@@ -80,17 +77,13 @@ public abstract class Tower extends GridItem {
 					this.react(gi, this.getGridColor());
 				}
 				else{
-					Tower.snap(gi, Touch.getInstance().getStartPosition());
+					Path.snap(gi, Touch.getInstance().getStartPosition());
 				}
 			}
 			else{
-				Tower.snap(gi, Touch.getInstance().getStartPosition());
+				Path.snap(gi, Touch.getInstance().getStartPosition());
 			}
 		}
-	}
-	
-	public static void snap(GridItem gridI, Coord dest){
-		//gridI.setCoord(dest);
 	}
 	
 	public void react(GridItem gi, GridColor towerColor){
@@ -112,8 +105,6 @@ public abstract class Tower extends GridItem {
 		//TODO update should probably pass around elapsedTickTime, add after controller is implemented - Gifan
 		if(cooldownRemaining > 0){
 			cooldownRemaining -= elapsedTime;
-		} else {
-			ability();
 		}
 	}
 }
