@@ -38,9 +38,31 @@ public abstract class DrawableObject {
 		this.coord = c;
 	}
 	
+	public Animation getAnimation(){
+		return animation;
+	}
+	
+	public void setAnimation(Animation animation){
+		this.animation = animation;
+	}
+	
 	public void setCoord(int x, int y){
 		this.coord.setX(x);
 		this.coord.setY(y);
+	}
+	
+	public boolean isWithin(double x, double y){
+		int halfWidth = this.getAnimation().getImageWidth() / 2;
+		int halfHeight = this.getAnimation().getImageHeight() / 2;
+		double left = this.getCoord().getX() - halfWidth;
+		double right = this.getCoord().getX() + halfWidth;
+		double top = this.getCoord().getY() - halfHeight;
+		double bottom = this.getCoord().getY() + halfHeight;
+		return left <= x && right >= x && top <= y && bottom >= y;
+	}
+	
+	public boolean isWithin(Coord coord){
+		return isWithin(coord.getX(), coord.getY());
 	}
 	
 	/* Example String
