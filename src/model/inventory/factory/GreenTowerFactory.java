@@ -1,7 +1,7 @@
 package model.inventory.factory;
 
-import model.grid.griditem.Coord;
-import model.grid.griditem.tower.GreenTower;
+import model.drawing.Coord;
+import model.grid.griditem.towers.GreenTower;
 import model.gui.component.ComponentPosition;
 import model.gui.touch.Touch;
 
