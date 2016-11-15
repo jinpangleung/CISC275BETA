@@ -46,7 +46,7 @@ public class GridCell {
 	public void setLand(boolean isLand) {
 		this.isLand = isLand;
 	}
-		public String toString(){
+	public String toString(){
 		String str = "";
 		switch(direction){
 		case NORTH: str += "North"; break;
