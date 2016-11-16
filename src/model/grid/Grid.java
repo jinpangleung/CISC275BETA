@@ -135,4 +135,7 @@ public class Grid extends Component {
 		}
 		return acc;
 	}
+	public GridCell getGridCell(Coord coord){
+		return pixelgrid.getGridCell(coord);
+	}
 }
