@@ -108,6 +108,13 @@ public class Grid extends Component {
 		return gabions;
 	}
 	
+	public int getSquareWidth(){
+		return board.getSquareWidth();
+	}
+	public int getSquareHeight(){
+		return board.getSquareHeight();
+	}
+	
 	@Override
 	public void mouseClicked(int mouseX, int mouseY){
 		
