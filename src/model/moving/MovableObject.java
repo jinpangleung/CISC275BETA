@@ -28,7 +28,7 @@ public abstract class MovableObject extends GridItem {
 	final double MAXVELOCITY = Grid.getSize()/50;
 	
 	public void move(long elapsedTime){
-		Acceleration a = Grid.getInstance().getAcceleration(this.getGridPosition());//grabs acceleration of current
+		Acceleration a = Grid.getInstance().getAcceleration(this.getGridPosition(), elapsedTime);//grabs acceleration of current
 		double ax = a.getX();//for specifics
 		double ay = a.getY();
 		Velocity v = this.getVelocity();//grabs velocity of current
@@ -55,8 +55,9 @@ public abstract class MovableObject extends GridItem {
 		this.getCoord().setX(cx);
 		this.getCoord().setY(cy);
 		
-		
-		//TODO-check if goes into next grid, if yes update grid position.		
+		//checks if goes into next grid, if yes update grid position.	
+		this.setGridPosition(Grid.getInstance().getGridCell(coord).getGridPosition());
+			
 		//get grid position for checking block
 		//get coor position for checking pixel
 		//GridPosition gridPos = Grid.getGridPosition(coord);
