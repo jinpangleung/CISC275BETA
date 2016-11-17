@@ -3,6 +3,14 @@ package model.inventory.factory;
 import model.gui.component.Component;
 import model.gui.component.ComponentPosition;
 
+/**
+ * TowerFactory
+ * an abstract class of factory that creates towers
+ * 
+ * @author eric
+ *
+ */
+
 public abstract class TowerFactory extends Component {
 	
 	private int towerCount;
