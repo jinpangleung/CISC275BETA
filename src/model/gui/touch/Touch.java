@@ -25,15 +25,17 @@ public class Touch {
 	private Coord startPosition;
 	private static Touch instance;
 	
-	public Touch(){
+	private Touch(){
 		nullObject = new DefaultTouchObject();
 		holding = nullObject;
 		isHolding = false;
 		startPosition = new Coord(0, 0);
-		instance = this;
 	}
 	
 	public static Touch getInstance(){
+		if(instance == null){
+			instance = new Touch();
+		}
 		return instance;
 	}
 	
