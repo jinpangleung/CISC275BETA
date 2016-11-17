@@ -6,8 +6,10 @@ import java.util.Collection;
 import java.util.Iterator;
 
 import model.*;
-
+import model.drawing.Coord;
+import model.grid.gridcell.Direction;
 import model.grid.gridcell.GridCell;
+import model.grid.gridcell.GridPosition;
 import model.grid.griditem.GridItem;
 import model.grid.griditem.gabion.Gabion;
 import model.grid.griditem.towers.Tower;
@@ -16,6 +18,7 @@ import model.gui.path.Path;
 import model.gui.component.Component;
 import model.gui.component.ComponentPosition;
 import model.gui.touch.Touch;
+import model.moving.Acceleration;
 
 
 ///////////////HAS LOTS OF ERRORS, WILL DEBUG AFTER ALL CLASSES ARE IMPLEMENTED/////////////
