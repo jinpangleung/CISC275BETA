@@ -12,7 +12,10 @@ import model.gui.touch.Touch;
 
 /**
  * GridCell
- * GridCell is the grid that the game is going to be played on
+ * GridCell is part of the grid that the game is going to be played on
+ * It handles the placing of towers ad gabions from the inventory
+ * It also let us know which GriCell each item is on, even when drawable object moved in terms of 
+ * PixelGrid
  * 
  * @author Roy
  *
