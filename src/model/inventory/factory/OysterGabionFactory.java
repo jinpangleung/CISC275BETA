@@ -6,6 +6,8 @@ import model.gui.component.ComponentPosition;
 import model.gui.touch.Touch;
 
 /**
+ * OysterGabionFactory
+ * a factory that creates OysterGabion
  * 
  * @author eric
  *
@@ -38,7 +40,7 @@ public class OysterGabionFactory extends TowerFactory {
 	@Override
 	public void mouseReleased(int mouseX, int mouseY){
 		// Do nothing
-		Touch.getInstance().snap();
+		Path.snap();
 	}
 
 }
