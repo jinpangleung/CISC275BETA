@@ -4,11 +4,11 @@ import java.util.Collection;
 import model.*;
 import model.drawing.Animation;
 import model.drawing.Coord;
+import model.drawing.Offset;
 import model.grid.Grid.*;
 import model.grid.gridcell.GridPosition;
 import model.grid.GridColor;
 import model.moving.Velocity;
-
 /**
  * 
  * InvasiveItem are creatures that's bad for the estuary, you are supposed to pick them up from river
