@@ -34,17 +34,25 @@ public class Model {
 	
 	public void initialize(int screenWidth, int screenHeight){
 		System.out.println("\tModel is being initialized");
+		// Initialize component mapping
 		defaultComponent = new DefaultComponent(0, 0, screenWidth, screenHeight);
 		componentMapping = new ComponentMapping(defaultComponent, screenWidth, screenHeight);
+		// Initialize Animation
 		Animation.initialize();
-		touch = new Touch();
+		// Initialize Touch
+		touch = Touch.getInstance();
+		// Initialize Grid component
 		this.screenWidth = screenWidth;
 		this.screenHeight = screenHeight;
-		double offset = (double) screenHeight * 0.1;
-		double width = (double) screenHeight * 0.8;
-		this.grid = new Grid(new ComponentPosition((int) offset, (int) offset), (int) width, (int) width);
+		int xOffset = (int) (screenWidth * .05);
+		int yOffset = (int) (screenHeight * .1);
+		int xSize = (int) (screenWidth * .7);
+		int ySize = (int) (screenHeight * .8);
+		this.grid = new Grid(new ComponentPosition(xOffset, yOffset), xSize, ySize);
 		this.componentMapping.addComponent(grid);
-		this.player = new Player();
+		// Initialize Player
+		this.player = Player.getInstance();
+		// Initialize Storm
 		this.storm = new Storm();
 		this.stormNum = 0;
 		System.out.println("\tModel has been initialized");
