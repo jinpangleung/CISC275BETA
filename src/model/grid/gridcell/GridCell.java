@@ -9,6 +9,16 @@ import model.gui.path.BackToGridBehavior;
 import model.gui.path.TowerBehavior;
 import model.gui.touch.Touch;
 
+
+/**
+ * GridCell
+ * GridCell is the grid that the game is going to be played on
+ * 
+ * @author Roy
+ *
+ */
+
+
 // A spot on the underlying Grid of the game
 // Mostly controls direction of the water flowing
 public class GridCell {
