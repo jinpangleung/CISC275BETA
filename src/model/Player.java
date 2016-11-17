@@ -7,17 +7,12 @@ public class Player {
 	private long startTime;
 	private long gameTime;
 	private int oysterCount;
-	private Storm storm;
-	private int stormNum;
 	
 	static private Player player;
 	private Player(){
 		estuaryHealth = 500; // ranging from 0 -> 1000, start right in the middle
 		startTime = System.currentTimeMillis();
 		gameTime = 0;
-		player = this;
-		this.storm = new Storm();
-		stormNum = 0;
 	}
 	
 	static public Player getInstance(){
