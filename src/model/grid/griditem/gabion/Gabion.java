@@ -6,8 +6,10 @@ import model.grid.gridcell.GridPosition;
 import model.grid.griditem.GridItem;
 
 /**
+ * Gabion
+ * Stops storm from damaging the estuary
  * 
- * @author leung
+ * @author Roy
  *
  */
 
