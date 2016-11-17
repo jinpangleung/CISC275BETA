@@ -10,6 +10,14 @@ import model.grid.griditem.GridItem;
 import model.grid.griditem.gabion.Gabion;
 import model.grid.griditem.towers.Tower;
 
+/**
+ * Storm
+ * A storm comes in to damage the estuary and it interacts with gabions, towers, and esturayHealth
+ * 
+ * @author Roy
+ *
+ */
+
 public class Storm {
 	protected boolean isStorming;
 	protected int damage;
