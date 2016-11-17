@@ -19,6 +19,15 @@ import model.gui.component.Component;
 import model.gui.component.ComponentPosition;
 import model.moving.Acceleration;
 
+/**
+ * Grid
+ * the grid is the area where the player is going to be playing on the game on
+ * you can only click in the grid area plus drag and drop it on grid
+ * 
+ * @author Roy, Eric
+ *
+ */
+
 
 ///////////////HAS LOTS OF ERRORS, WILL DEBUG AFTER ALL CLASSES ARE IMPLEMENTED/////////////
 // Fixed the errors for now, but Grid has a lot going on, will look into finishing it later - Eric

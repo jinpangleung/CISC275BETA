@@ -6,6 +6,8 @@ import model.gui.component.ComponentPosition;
 import model.gui.touch.Touch;
 
 /**
+ * OysterGabionFactory
+ * a factory that creates OysterGabion
  * 
  * @author eric
  *

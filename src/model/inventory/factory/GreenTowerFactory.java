@@ -6,6 +6,8 @@ import model.gui.component.ComponentPosition;
 import model.gui.touch.Touch;
 
 /**
+ * GreenTowerFactory
+ * a factory that creates greentower
  * 
  * @author eric
  *

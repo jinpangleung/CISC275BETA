@@ -4,6 +4,16 @@ import model.drawing.Coord;
 import model.grid.gridcell.GridCell;
 import model.grid.gridcell.GridPosition;
 
+
+/**
+ * PixelGrid
+ * it helps for moveableObject, so the animation can move smoothly, instead of jumping from
+ * gridcell to gridcell
+ * 
+ * @author Roy, Eric
+ *
+ */
+
 public class PixelGrid {
 
 	

@@ -6,6 +6,8 @@ import model.gui.component.ComponentPosition;
 import model.gui.touch.Touch;
 
 /**
+ * ConcreteGabionFactory
+ * a factory that creates ConcreteGabion
  * 
  * @author eric
  *

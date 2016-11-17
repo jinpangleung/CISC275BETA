@@ -6,6 +6,8 @@ import model.gui.path.Path;
 import model.gui.touch.Touch;
 
 /**
+ * BlueTowerFactory
+ * a factory that creates bluetower
  * 
  * @author eric
  *

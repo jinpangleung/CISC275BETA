@@ -1,5 +1,13 @@
 package model.gui.component;
 
+/**
+ * DefaultComponent
+ * a default component
+ * 
+ * @author Eric
+ *
+ */
+
 public class DefaultComponent extends Component {
 
 	public DefaultComponent(ComponentPosition topLeft, int width, int height) {
