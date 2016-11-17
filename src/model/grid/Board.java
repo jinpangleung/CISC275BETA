@@ -6,17 +6,24 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.grid.gridcell.Direction;
 import model.grid.gridcell.GridCell;
 import model.grid.gridcell.GridPosition;
+import model.grid.griditem.GridItem;
+import model.grid.griditem.towers.Tower;
+import model.grid.griditem.trailitem.TrailItem;
+import model.gui.path.BackToGridBehavior;
+import model.gui.touch.Touch;
 
 public class Board {
 	
 	private GridCell[][] gridCell;
 	private static int gridSizeX; //TODO CHANGE BACK TO NOT STATIC WHEN YOU FIX THE THING DOWN BELOW
 	private int gridSizeY;
+	private List<GridPosition> spawnPositions;
 	
 	// Constructor
 	public Board(){
@@ -28,6 +35,8 @@ public class Board {
 		    gridSizeY = lines.size();
 		    System.out.println("Grid Size " + Integer.toString(gridSizeX));
 		    gridCell = new GridCell[gridSizeX][gridSizeY];
+		    spawnPositions = new ArrayList<GridPosition>();
+		    spawnPositions.add(new GridPosition(0, 0));
 		    for(int i = 0; i < gridSizeY; i++){ // i is the y component
 		    	String str = lines.get(i);
 		    	for(int j = 0; j < gridSizeX; j++){ // j is the x component
@@ -71,6 +80,12 @@ public class Board {
 	public static int getSquareSize(){ //TODO: FIX THIS RETURN STATEMENT
 		return gridSizeX;
 		
+	}
+	public List<GridPosition> getSpawnPositions(){
+		return spawnPositions;
+	}
+	public GridCell getGridCell(GridPosition gp){
+		return getGridCell(gp.getX(), gp.getY());
 	}
 	public class DirectionGrid {
 		
