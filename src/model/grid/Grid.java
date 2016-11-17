@@ -6,8 +6,7 @@ import java.util.Collection;
 import java.util.Iterator;
 
 import model.*;
-import model.drawing.Coord;
-import model.grid.gridcell.Direction;
+
 import model.grid.gridcell.GridCell;
 import model.grid.gridcell.GridPosition;
 import model.grid.griditem.GridItem;
@@ -18,7 +17,6 @@ import model.gui.path.Path;
 import model.gui.component.Component;
 import model.gui.component.ComponentPosition;
 import model.gui.touch.Touch;
-import model.moving.Acceleration;
 
 
 ///////////////HAS LOTS OF ERRORS, WILL DEBUG AFTER ALL CLASSES ARE IMPLEMENTED/////////////
@@ -120,12 +118,37 @@ public class Grid extends Component {
 	
 	@Override
 	public void mouseClicked(int mouseX, int mouseY){
-		
+		Iterator<TrailItem> it = trailItems.iterator();
+		while(it.hasNext()){
+			TrailItem trailItem = it.next();
+			if(trailItem.isWithin(mouseX, mouseY)){
+				trailItem.click();
+				return;
+			}
+		}
 	}
 	
 	@Override
 	public void mouseReleased(int mouseX, int mouseY){
-		
+		board.release(mouseX, mouseY);
+	}
+	
+	public boolean hasTower(GridPosition gp){
+		for(Tower t : towers){
+			if(gp.equals(t.getGridPosition())){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean hasGabion(GridPosition gp){
+		for(Gabion g : gabions){
+			if(gp.equals(g.getGridPosition())){
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public Acceleration getAcceleration(GridPosition gridPosition, long elapsedTime) {
