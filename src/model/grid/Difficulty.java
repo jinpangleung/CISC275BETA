@@ -1,5 +1,6 @@
 package model.grid;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -26,8 +27,12 @@ import model.gui.path.*;
  *
  */
 
-public class Difficulty {
+public class Difficulty implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3202543495274376860L;
 	private long timeToSpawn;
 	private final long SPAWN_TIME = 300000000;
 	private int oysterCount;

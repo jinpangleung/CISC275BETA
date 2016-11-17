@@ -1,6 +1,7 @@
 package model.gui.touch;
 
 import java.awt.Graphics;
+import java.io.Serializable;
 
 import model.drawing.DrawableObject;
 import model.grid.griditem.GridItem;
@@ -17,7 +18,12 @@ import model.drawing.Coord;
  *
  */
 
-public class Touch {
+public class Touch implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5150015544320059713L;
 	
 	private GridItem holding;
 	private GridItem nullObject;

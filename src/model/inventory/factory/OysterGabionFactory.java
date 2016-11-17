@@ -1,5 +1,7 @@
 package model.inventory.factory;
 	
+import java.io.Serializable;
+
 import model.drawing.Coord;
 import model.grid.griditem.gabion.OysterGabion;
 import model.gui.component.ComponentPosition;
@@ -15,7 +17,12 @@ import model.gui.touch.Touch;
  *
  */
 
-public class OysterGabionFactory extends TowerFactory {
+public class OysterGabionFactory extends TowerFactory implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2830295497946424341L;
 	
 	private int oysters;
 	private final int OYSTERS_PER_GABION = 4;

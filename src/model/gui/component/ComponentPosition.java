@@ -1,5 +1,7 @@
 package model.gui.component;
 
+import java.io.Serializable;
+
 /**
  * ComponentPosition
  * An x,y coordinate used exclusively for describing position of components
@@ -7,7 +9,12 @@ package model.gui.component;
  *
  */
 
-public class ComponentPosition {
+public class ComponentPosition implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4213046629618881243L;
 	
 	private int x;
 	private int y;

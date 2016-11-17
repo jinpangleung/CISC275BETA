@@ -1,5 +1,7 @@
 package model.gui.path;
 
+import java.io.Serializable;
+
 import model.drawing.Coord;
 import model.grid.Grid;
 import model.grid.griditem.GridItem;
@@ -11,7 +13,7 @@ import model.moving.Velocity;
  * A Path is used to tell a Grid Items to move from one point of the screen to another
  */
 
-public class Path {
+public class Path implements Serializable{
 	
 	private GridItem gi;
 	private Coord destination;

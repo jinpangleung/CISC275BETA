@@ -7,7 +7,7 @@ package model.gui.path;
  *
  */
 
-public interface PathBehavior {
+public interface PathBehavior{
 	
 	public void terminate(Path p);
 

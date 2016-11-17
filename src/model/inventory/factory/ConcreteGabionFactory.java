@@ -1,5 +1,7 @@
 package model.inventory.factory;
 
+import java.io.Serializable;
+
 import model.drawing.Coord;
 import model.grid.gridcell.GridPosition;
 import model.grid.griditem.gabion.ConcreteGabion;
@@ -14,8 +16,12 @@ import model.gui.touch.Touch;
  *
  */
 
-public class ConcreteGabionFactory extends TowerFactory {
+public class ConcreteGabionFactory extends TowerFactory implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6843059096239554043L;
 	private int concrete;
 
 	public ConcreteGabionFactory(ComponentPosition topLeft, int width, int height) {

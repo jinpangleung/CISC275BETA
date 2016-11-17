@@ -1,5 +1,7 @@
 package model.grid;
 
+import java.io.Serializable;
+
 /**
  * GridColor
  * enum class for the color associated with the trailitems and towers
@@ -8,7 +10,7 @@ package model.grid;
  *
  */
 
-public enum GridColor {
+public enum GridColor implements Serializable{
 	WHITE, RED, GREEN, BLUE, YELLOW
 	//White = all
 	//Red = pollutant

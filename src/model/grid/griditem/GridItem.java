@@ -1,5 +1,7 @@
 package model.grid.griditem;
 
+import java.io.Serializable;
+
 import model.drawing.Animation;
 import model.drawing.Coord;
 import model.drawing.DrawableObject;
@@ -14,8 +16,13 @@ import model.grid.gridcell.GridPosition;
  *
  */
 
-public class GridItem extends DrawableObject {
+public class GridItem extends DrawableObject implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2384943399880347105L;
+
 	public GridItem(Coord coord, Animation animation, GridPosition gridPosition, GridColor gc) {
 		super(coord, animation);
 		this.gridPosition = gridPosition;

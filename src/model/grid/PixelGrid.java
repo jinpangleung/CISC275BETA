@@ -1,5 +1,7 @@
 package model.grid;
 
+import java.io.Serializable;
+
 import model.drawing.Coord;
 import model.grid.gridcell.GridCell;
 import model.grid.gridcell.GridPosition;
@@ -14,7 +16,12 @@ import model.grid.gridcell.GridPosition;
  *
  */
 
-public class PixelGrid {
+public class PixelGrid implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6741725641642085096L;
 	
 	public int squareWidth;
 	public int squareHeight;

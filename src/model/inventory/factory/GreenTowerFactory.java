@@ -1,5 +1,7 @@
 package model.inventory.factory;
 
+import java.io.Serializable;
+
 import model.drawing.Coord;
 import model.grid.griditem.towers.GreenTower;
 import model.gui.component.ComponentPosition;
@@ -13,7 +15,12 @@ import model.gui.touch.Touch;
  *
  */
 
-public class GreenTowerFactory extends TowerFactory {
+public class GreenTowerFactory extends TowerFactory implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1068159228629894456L;
 	
 	private int remainingGreenTower;
 

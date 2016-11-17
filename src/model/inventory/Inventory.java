@@ -1,6 +1,7 @@
 package model.inventory;
 
 import java.awt.Graphics;
+import java.io.Serializable;
 
 import model.grid.GridColor;
 import model.grid.griditem.gabion.GabionType;
@@ -16,7 +17,12 @@ import model.inventory.factory.*;
  *
  */
 
-public class Inventory {
+public class Inventory implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8815641631426245133L;
 	
 	private RedTowerFactory rtf;
 	private BlueTowerFactory btf;

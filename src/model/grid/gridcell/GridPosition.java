@@ -1,5 +1,7 @@
 package model.grid.gridcell;
 
+import java.io.Serializable;
+
 /**
  * GridPosition
  * x, y positions that correlates the a cell on the grid
@@ -8,7 +10,12 @@ package model.grid.gridcell;
  *
  */
 
-public class GridPosition {
+public class GridPosition implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3814282873416020711L;
 	
 	private int x;
 	private int y;

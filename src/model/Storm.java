@@ -1,6 +1,7 @@
 package model;
 
 import java.awt.Graphics;
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -18,7 +19,12 @@ import model.grid.griditem.towers.Tower;
  *
  */
 
-public class Storm {
+public class Storm implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2408938356139022877L;
+	
 	protected boolean isStorming;
 	protected int damage;
 	

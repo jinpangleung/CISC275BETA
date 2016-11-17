@@ -1,6 +1,7 @@
 package model;
 
 import java.awt.Graphics;
+import java.io.Serializable;
 
 import model.drawing.Animation;
 import model.grid.Grid;
@@ -20,7 +21,12 @@ import model.inventory.factory.TowerFactory;
  *
  */
 
-public class Model {
+public class Model implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2373310509856548023L;
 	
 	// Model Attributes
 	private Component defaultComponent;

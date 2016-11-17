@@ -1,5 +1,7 @@
 package model;
 
+import java.io.Serializable;
+
 import model.grid.Grid;
 
 /**
@@ -10,22 +12,22 @@ import model.grid.Grid;
  *
  */
 
-public class Player {
+public class Player implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4335174976411188096L;
+	
 	private int estuaryHealth;
 	private long startTime;
 	private long gameTime;
 	private int oysterCount;
-	private Storm storm;
-	private int stormNum;
 	
 	static private Player player;
 	private Player(){
 		estuaryHealth = 500; // ranging from 0 -> 1000, start right in the middle
 		startTime = System.currentTimeMillis();
 		gameTime = 0;
-		player = this;
-		this.storm = new Storm();
-		stormNum = 0;
 	}
 	
 	static public Player getInstance(){

@@ -1,5 +1,7 @@
 package model.drawing;
 
+import java.io.Serializable;
+
 /**
  * Coord
  * A Coord is specifically for the pixel coordinates of a drawable object
@@ -9,7 +11,12 @@ package model.drawing;
  *
  */
 
-public class Coord {
+public class Coord implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6858640293412542194L;
 	
 	private double x;
 	private double y;

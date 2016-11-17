@@ -1,5 +1,7 @@
 package model.grid.gridcell;
 
+import java.io.Serializable;
+
 import model.grid.Grid;
 import model.grid.griditem.GridItem;
 import model.grid.griditem.gabion.Gabion;
@@ -25,7 +27,12 @@ import model.gui.touch.Touch;
 
 // A spot on the underlying Grid of the game
 // Mostly controls direction of the water flowing
-public class GridCell {
+public class GridCell implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3956680411375822446L;
 	
 	private GridPosition gridPosition;
 	private boolean isTrail;
