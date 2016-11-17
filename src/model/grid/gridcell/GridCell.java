@@ -31,14 +31,26 @@ public class GridCell {
 	//public boolean isLand;
 	private Direction direction;
 	private boolean forGabion;
+	private static int gridCellX;
+	private static int gridCellY;
 	
 	public GridCell(GridPosition g, boolean isT, Direction d){//boolean isL
 		this.gridPosition = g;
 		this.isTrail = isT;
 		//this.isLand = isL; probably dont need this, if its not the trail then its the land.
 		this.direction = d;
+		gridCellX = 10;
+		gridCellY = 10;
 	}
 
+	public static int getGridCellX(){
+		return gridCellX;
+	}
+	
+	public static int getGridCellY(){
+		return gridCellY;
+	}	
+	
 	public Direction getDirection() {
 		return direction;
 	}
