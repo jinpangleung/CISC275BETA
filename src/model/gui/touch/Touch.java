@@ -60,7 +60,7 @@ public class Touch {
 		holding.draw(g);
 	}
 	
-	public DrawableObject getHolding() {
+	public GridItem getHolding() {
 		return holding;
 	}
 	
