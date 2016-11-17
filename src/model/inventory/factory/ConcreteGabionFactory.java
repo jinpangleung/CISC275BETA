@@ -37,7 +37,7 @@ public class ConcreteGabionFactory extends TowerFactory {
 	@Override
 	public void mouseReleased(int mouseX, int mouseY){
 		// Do nothing
-		Touch.snap();
+		Path.snap();
 	}
 
 }
