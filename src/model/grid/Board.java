@@ -22,7 +22,7 @@ import model.gui.touch.Touch;
  * Board
  * the board is basically the whole screen, where it contains all Grid and inventory
  * 
- * @author Roy, Eric
+ * @author Sam
  *
  */
 
@@ -72,10 +72,10 @@ public class Board {
 		}
 	}
 	
-	public int getSquareWidth(){
+	public int getBoardWidth(){
 		return gridSizeX;
 	}
-	public int getSquareHeight(){
+	public int getBoardHeight(){
 		return gridSizeY;
 		
 	}
