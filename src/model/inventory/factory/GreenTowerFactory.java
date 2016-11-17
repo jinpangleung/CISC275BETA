@@ -37,7 +37,7 @@ public class GreenTowerFactory extends TowerFactory {
 	@Override
 	public void mouseReleased(int mouseX, int mouseY){
 		// Do nothing
-		Path.snap();
+		Touch.getInstance().snap();
 	}
 
 }
