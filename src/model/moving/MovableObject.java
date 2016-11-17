@@ -25,7 +25,7 @@ public abstract class MovableObject extends GridItem {
 	}
 
 	private Velocity velocity;
-	final double MAXVELOCITY = Grid.getSize()/50;
+	final double MAXVELOCITY = Grid.getInstance().getWidthByHeight()/50;
 	
 	public void move(long elapsedTime){
 		Acceleration a = Grid.getInstance().getAcceleration(this.getGridPosition(), elapsedTime);//grabs acceleration of current
