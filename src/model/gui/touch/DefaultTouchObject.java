@@ -9,7 +9,7 @@ import model.grid.griditem.GridItem;
 public class DefaultTouchObject extends GridItem {
 
 	public DefaultTouchObject() {
-		super(new Coord(0.0, 0.0), new Animation(), new GridPosition(0, 0));
+		super(new Coord(0.0, 0.0), new Animation(), new GridPosition(0, 0), null);
 	}
 
 }
