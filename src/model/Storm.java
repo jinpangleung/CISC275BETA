@@ -22,8 +22,8 @@ public class Storm {
 	protected boolean isStorming;
 	protected int damage;
 	
-	int sizeX = Grid.getInstance().getSquareWidth();
-	int sizeY = Grid.getInstance().getSquareHeight();
+	int sizeX = GridCell.getGridCellX();
+	int sizeY = GridCell.getGridCellY();
 	boolean done = false;
 	
 	public Storm(){
