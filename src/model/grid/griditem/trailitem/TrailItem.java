@@ -25,7 +25,7 @@ import model.moving.Velocity;
 public class TrailItem extends MovableObject {
 	
 	public TrailItem(Coord coord, Animation animation, GridPosition gridPosition, Velocity velocity, GridColor gc) {
-		super(coord, animation, gridPosition, velocity);
+		super(coord, animation, gridPosition, velocity, gc);
 	}
 	
 	
