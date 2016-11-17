@@ -79,6 +79,9 @@ public class Board {
 		return gridSizeY;
 		
 	}
+	public int getWidthByHeight(){
+		return gridSizeX * gridSizeY;
+	}
 	public GridCell getGridCell(int x, int y){
 		return gridCell[x][y];
 	}
