@@ -6,6 +6,8 @@ import model.gui.component.ComponentPosition;
 import model.gui.touch.Touch;
 
 /**
+ * GreenTowerFactory
+ * a factory that creates greentower
  * 
  * @author eric
  *
@@ -37,7 +39,7 @@ public class GreenTowerFactory extends TowerFactory {
 	@Override
 	public void mouseReleased(int mouseX, int mouseY){
 		// Do nothing
-		Touch.getInstance().snap();
+		Path.snap();
 	}
 
 }
