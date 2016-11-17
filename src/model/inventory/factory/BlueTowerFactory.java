@@ -2,6 +2,7 @@ package model.inventory.factory;
 import model.drawing.Coord;
 import model.grid.griditem.towers.BlueTower;
 import model.gui.component.ComponentPosition;
+import model.gui.path.Path;
 import model.gui.touch.Touch;
 
 /**
@@ -29,14 +30,14 @@ public class BlueTowerFactory extends TowerFactory {
 		// If applicable, clamp new tower to touch
 		if(remainingBlueTower > 0){
 			remainingBlueTower -= 1;
-			Touch.clamp(new BlueTower(new Coord(topLeft.getX(), topLeft.getY())));
+			Touch.getInstance().clamp(new BlueTower(new Coord(topLeft.getX(), topLeft.getY())));
 		}
 	}
 	
 	@Override
 	public void mouseReleased(int mouseX, int mouseY){
 		// Do nothing
-		Touch.snap();
+		Path.snap();
 	}
 
 }
