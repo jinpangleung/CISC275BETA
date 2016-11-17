@@ -18,6 +18,14 @@ import model.grid.griditem.trailitem.TrailItem;
 import model.gui.path.BackToGridBehavior;
 import model.gui.touch.Touch;
 
+/**
+ * Board
+ * the board is basically the whole screen, where it contains all Grid and inventory
+ * 
+ * @author Roy, Eric
+ *
+ */
+
 public class Board {
 	
 	private GridCell[][] gridCell;
