@@ -16,9 +16,10 @@ import model.grid.gridcell.GridPosition;
 
 public class GridItem extends DrawableObject {
 	
-	public GridItem(Coord coord, Animation animation, GridPosition gridPosition) {
+	public GridItem(Coord coord, Animation animation, GridPosition gridPosition, GridColor gc) {
 		super(coord, animation);
 		this.gridPosition = gridPosition;
+		this.gridColor = gc;
 	}
 
 	protected GridPosition gridPosition;
