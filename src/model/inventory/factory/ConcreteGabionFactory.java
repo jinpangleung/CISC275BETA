@@ -1,6 +1,7 @@
 package model.inventory.factory;
 
 import model.drawing.Coord;
+import model.grid.gridcell.GridPosition;
 import model.grid.griditem.gabion.ConcreteGabion;
 import model.gui.component.ComponentPosition;
 import model.gui.touch.Touch;
@@ -32,14 +33,11 @@ public class ConcreteGabionFactory extends TowerFactory {
 		// If applicable, clamp new tower to touch
 		if(concrete > 0){
 			concrete -= 1;
-			Touch.getInstance().clamp(new ConcreteGabion(new Coord(topLeft.getX(), topLeft.getY()), null, null));
+			/*
+			Touch.getInstance().clamp(new ConcreteGabion(new Coord(topLeft.getX(), topLeft.getY()),
+					new GridPosition(0, 0)));
+					*/
 		}
-	}
-	
-	@Override
-	public void mouseReleased(int mouseX, int mouseY){
-		// Do nothing
-		Path.snap();
 	}
 
 }

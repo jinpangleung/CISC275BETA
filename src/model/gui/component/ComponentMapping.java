@@ -40,6 +40,7 @@ public class ComponentMapping {
 	}
 	
 	public void mouseReleased(int mouseX, int mouseY){
+		System.out.println("Component Mapping " + Integer.toString(mouseX) + ", " + Integer.toString(mouseY));
 		this.getComponent(mouseX, mouseY).mouseReleased(mouseX, mouseY);
 	}
 	

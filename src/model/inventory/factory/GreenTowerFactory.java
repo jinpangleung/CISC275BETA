@@ -28,18 +28,8 @@ public class GreenTowerFactory extends TowerFactory {
 	}
 	
 	@Override
-	public void mouseClicked(int mouseX, int mouseY){
-		// If applicable, clamp new tower to touch
-		if(remainingGreenTower > 0){
-			remainingGreenTower -= 1;
-			Touch.getInstance().clamp(new GreenTower(new Coord(topLeft.getX(), topLeft.getY())));
-		}
-	}
-	
-	@Override
 	public void mouseReleased(int mouseX, int mouseY){
-		// Do nothing
-		Path.snap();
+		
 	}
 
 }

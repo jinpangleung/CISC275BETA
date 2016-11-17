@@ -1,7 +1,14 @@
 package model.inventory.factory;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
+import model.drawing.Coord;
+import model.grid.griditem.towers.RedTower;
 import model.gui.component.Component;
 import model.gui.component.ComponentPosition;
+import model.gui.path.Path;
+import model.gui.touch.Touch;
 
 /**
  * TowerFactory
@@ -26,17 +33,19 @@ public abstract class TowerFactory extends Component {
 	@Override
 	public void mouseClicked(int mouseX, int mouseY){
 		// If applicable, clamp new tower to touch
-	}
-	
-	@Override
-	public void mouseReleased(int mouseX, int mouseY){
-		// Do nothing
+		System.out.println("Red Tower Clicked");
+		Touch.getInstance().clamp(new RedTower(new Coord(mouseX, mouseY)));
 	}
 	
 	public void increaseTowerCount(){
 		towerCount++;
 	}
 	
-	
+	@Override
+	public void mouseReleased(int mouseX, int mouseY){
+		if(Touch.getInstance().isHolding()){
+			Path.snap();
+		}
+	}
 
 }

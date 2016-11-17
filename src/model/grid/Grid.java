@@ -1,5 +1,6 @@
 package model.grid;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -57,28 +58,23 @@ public class Grid extends Component {
 		this.trailItems = new ArrayList<TrailItem>();
 		this.gabions = new ArrayList<Gabion>();
 		this.paths = new ArrayList<Path>();
-		this.difficulty = new Difficulty();
+		//this.difficulty = new Difficulty();
+		grid = this;
 		this.board = new Board();
 		this.pixelgrid = new PixelGrid();
-		grid = this;
+		System.out.println(board.getSquareWidth());
+		System.out.println(board.getSquareHeight());
+		System.out.println(this.getTopLeft());
+		System.out.println(this.getBottomRight());
+		System.out.println(this.pixelgrid.squareWidth);
+		System.out.println(this.pixelgrid.squareHeight);
 	}
 	
 	public void update(long timeElapsed){
-		difficulty.update(timeElapsed);
+		//difficulty.update(timeElapsed);
 		for(GridItem gi : items){
 			gi.update(timeElapsed);
 		}
-	}
-	
-	//3 is arbitary, it depends on where we actually want out spawn point to be at
-	public Coord spawnPoint1(){
-		Coord coord = new Coord(0.05*GridCell.getGridCellX()*3, 0.1*GridCell.getGridCellY());
-		return coord;
-	}
-	
-	public Coord spawnPoint2(){
-		Coord coord = new Coord(0.05*GridCell.getGridCellX()*7, 0.1*GridCell.getGridCellY());
-		return coord;
 	}
 	
 	public List<GridPosition> getSpawnPositions(){
@@ -89,9 +85,14 @@ public class Grid extends Component {
 		return pixelgrid.getValidCoord(gp);
 	}
 	
+	/*
 	public void draw(Graphics g){
-		
+		g.setColor(Color.CYAN);
+		g.fillRect(this.getTopLeft().getX(), this.getTopLeft().getY(),
+				this.getBottomRight().getX() - this.getTopLeft().getX(),
+				this.getBottomRight().getY() - this.getTopLeft().getY());
 	}
+	*/
 	
 	private void addGridItem(GridItem gi){
 		items.add(gi);
@@ -141,11 +142,11 @@ public class Grid extends Component {
 		return gabions;
 	}
 	
-	public double getSquareWidth(){
-		return (board.getBoardWidth())*0.7;
+	public int getSquareWidth(){
+		return board.getSquareWidth();
 	}
-	public double getSquareHeight(){
-		return (board.getBoardHeight())*0.8;
+	public int getSquareHeight(){
+		return board.getSquareHeight();
 	}
 	
 	@Override
@@ -162,7 +163,8 @@ public class Grid extends Component {
 	
 	@Override
 	public void mouseReleased(int mouseX, int mouseY){
-		board.getGridCell(mouseX, mouseY).release(mouseX, mouseY);
+		System.out.println("Grid " + Integer.toString(mouseX) + ", " + Integer.toString(mouseY));
+		this.getGridCell(mouseX, mouseY).release(mouseX, mouseY);
 	}
 	
 	public boolean hasTower(GridPosition gp){
@@ -200,10 +202,16 @@ public class Grid extends Component {
 		}
 		return acc;
 	}
-	public GridCell getGridCell(Coord coord){
-		GridPosition gp = pixelgrid.getGridCell(coord);
+	
+	public GridCell getGridCell(int x, int y){
+		System.out.println("Model:GetGridCell " + Integer.toString(x) + ", " + Integer.toString(y));
+		GridPosition gp = pixelgrid.getGridCell(x, y);
 		return board.getGridCell(gp);
 	}
+	public GridCell getGridCell(Coord coord){
+		return getGridCell((int) coord.getX(), (int) coord.getY());
+	}
+
 	public int getWidthByHeight() {
 		return board.getWidthByHeight();
 	}

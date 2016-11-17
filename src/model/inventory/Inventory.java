@@ -1,5 +1,7 @@
 package model.inventory;
 
+import java.awt.Graphics;
+
 import model.grid.GridColor;
 import model.grid.griditem.gabion.GabionType;
 import model.gui.component.ComponentPosition;
@@ -69,6 +71,14 @@ public class Inventory {
 		case OYSTER: return ogf;
 		default: throw new RuntimeException();
 		}
+	}
+	
+	public void draw(Graphics g){
+		rtf.draw(g);
+		btf.draw(g);
+		gtf.draw(g);
+		cgf.draw(g);
+		ogf.draw(g);
 	}
 
 }

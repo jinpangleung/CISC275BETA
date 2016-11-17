@@ -33,7 +33,6 @@ public class Animation {
 	}
 	
 	public static void initialize(){
-		insertImage(null, null);
 		insertImage("images/ConcreteGabion.png", "ConcreteGabion");
 		insertImage("images/EH1.png", "EH1");
 		insertImage("images/EH2.png", "EH2");

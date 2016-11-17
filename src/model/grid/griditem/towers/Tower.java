@@ -30,8 +30,9 @@ public abstract class Tower extends GridItem {
 	protected long cooldownRemaining;
 	protected int range;
 	
-	public Tower(Coord coord, GridColor gc) {
-		super(coord, new Animation(), new GridPosition(0, 0), gc);
+	public Tower(Coord coord) {
+		super(coord, new Animation(), new GridPosition(0, 0), GridColor.RED);
+		
 	}
 	
 	public long getCooldownRemaining(){
@@ -79,11 +80,11 @@ public abstract class Tower extends GridItem {
 					this.react(gi, this.getGridColor());
 				}
 				else{
-					Path.snap(gi, Touch.getInstance().getStartPosition(), new BackToGridBehavior());
+					Path.snap();
 				}
 			}
 			else if(gi instanceof Tower){
-				Path.snap(gi, Touch.getInstance().getStartPosition(), new TowerBehavior());
+				Path.snap();
 			}
 		}
 	}

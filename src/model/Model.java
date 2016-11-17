@@ -84,7 +84,9 @@ public class Model {
 	}
 	
 	public void draw(Graphics g){
+		inventory.draw(g);
 		grid.draw(g);
+		touch.draw(g);
 	}
 	
 	public void mouseClicked(int mouseX, int mouseY){
@@ -92,6 +94,7 @@ public class Model {
 	}
 	
 	public void mouseReleased(int mouseX, int mouseY){
+		System.out.println("Model " + Integer.toString(mouseX) + ", " + Integer.toString(mouseY));
 		componentMapping.mouseReleased(mouseX, mouseY);
 	}
 	

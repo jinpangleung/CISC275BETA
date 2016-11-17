@@ -20,7 +20,7 @@ import model.grid.gridcell.GridPosition;
 public class GreenTower extends Tower{
 	
 	public GreenTower(Coord coord){
-		super(coord, null);
+		super(coord);
 		setGridColor(GridColor.GREEN);
 		cooldownRemaining = 10;
 		range = 10;

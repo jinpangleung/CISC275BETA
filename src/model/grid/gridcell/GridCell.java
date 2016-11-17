@@ -6,6 +6,7 @@ import model.grid.griditem.gabion.Gabion;
 import model.grid.griditem.towers.Tower;
 import model.grid.griditem.trailitem.TrailItem;
 import model.gui.path.BackToGridBehavior;
+import model.gui.path.Path;
 import model.gui.path.TowerBehavior;
 import model.gui.touch.Touch;
 
@@ -31,26 +32,14 @@ public class GridCell {
 	//public boolean isLand;
 	private Direction direction;
 	private boolean forGabion;
-	private static int gridCellX;
-	private static int gridCellY;
 	
 	public GridCell(GridPosition g, boolean isT, Direction d){//boolean isL
 		this.gridPosition = g;
 		this.isTrail = isT;
 		//this.isLand = isL; probably dont need this, if its not the trail then its the land.
 		this.direction = d;
-		gridCellX = 10;
-		gridCellY = 10;
 	}
 
-	public static int getGridCellX(){
-		return gridCellX;
-	}
-	
-	public static int getGridCellY(){
-		return gridCellY;
-	}	
-	
 	public Direction getDirection() {
 		return direction;
 	}
@@ -101,7 +90,7 @@ public class GridCell {
 	public void release(int mouseX, int mouseY){
 		GridItem gi = Touch.getInstance().unClamp();
 		if(gi instanceof TrailItem){
-			model.gui.path.Path.snap(gi, Touch.getInstance().getStartPosition(), new BackToGridBehavior());
+			Path.snap();
 		} else if (gi instanceof Tower){
 			makeAnHonestAttemptToPlaceTheTower((Tower) gi);
 		} else if (gi instanceof Gabion){
@@ -111,11 +100,11 @@ public class GridCell {
 	
 	public void makeAnHonestAttemptToPlaceTheTower(Tower t){
 		if(forGabion){
-			model.gui.path.Path.snap(t, Touch.getInstance().getStartPosition(), new TowerBehavior());
+			Path.snap();
 			return;
 		}
 		if(Grid.getInstance().hasTower(this.gridPosition)){
-			model.gui.path.Path.snap(t, Touch.getInstance().getStartPosition(), new BackToGridBehavior());
+			Path.snap();
 			return;
 		}
 		Grid.getInstance().addTower(t);
@@ -125,7 +114,7 @@ public class GridCell {
 	public void makeAnHonestAttemptToPlaceTheGabion(Gabion g){
 		if(forGabion){
 			if(Grid.getInstance().hasGabion(this.gridPosition)){
-				model.gui.path.Path.snap(g, Touch.getInstance().getStartPosition(), new TowerBehavior());
+				Path.snap();
 				return;
 			} else {
 				Grid.getInstance().addGabion(g);

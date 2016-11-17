@@ -25,7 +25,7 @@ public class Touch {
 	private Coord startPosition;
 	private static Touch instance;
 	
-	public Touch(){
+	private Touch(){
 		nullObject = new DefaultTouchObject();
 		holding = nullObject;
 		isHolding = false;
@@ -47,6 +47,7 @@ public class Touch {
 		this.holding = objectToBeClamped;
 		this.startPosition = objectToBeClamped.getCoord();
 		this.isHolding = true;
+		System.out.println(objectToBeClamped);
 	}
 	
 	public GridItem unClamp(){
@@ -57,7 +58,9 @@ public class Touch {
 	}
 	
 	public void draw(Graphics g){
-		holding.draw(g);
+		if(isHolding){
+			holding.draw(g);
+		}
 	}
 	
 	public GridItem getHolding() {
@@ -93,11 +96,6 @@ public class Touch {
 		str += "Touch is holding...\n";
 		str += holding.toString();
 		return str;
-	}
-
-	public void snap() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

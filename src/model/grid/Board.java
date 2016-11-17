@@ -22,14 +22,14 @@ import model.gui.touch.Touch;
  * Board
  * the board is basically the whole screen, where it contains all Grid and inventory
  * 
- * @author Sam
+ * @author Roy, Eric
  *
  */
 
 public class Board {
 	
 	private GridCell[][] gridCell;
-	private static int gridSizeX; //TODO CHANGE BACK TO NOT STATIC WHEN YOU FIX THE THING DOWN BELOW
+	private int gridSizeX;
 	private int gridSizeY;
 	private List<GridPosition> spawnPositions;
 	
@@ -72,15 +72,12 @@ public class Board {
 		}
 	}
 	
-	public int getBoardWidth(){
+	public int getSquareWidth(){
 		return gridSizeX;
 	}
-	public int getBoardHeight(){
+	public int getSquareHeight(){
 		return gridSizeY;
 		
-	}
-	public int getWidthByHeight(){
-		return gridSizeX * gridSizeY;
 	}
 	public GridCell getGridCell(int x, int y){
 		return gridCell[x][y];
@@ -88,15 +85,21 @@ public class Board {
 	public GridCell getGridPosition(GridPosition gp){
 		return getGridCell(gp.getX(),gp.getY());
 	}
-	public static int getSquareSize(){ //TODO: FIX THIS RETURN STATEMENT
+	public int getGridSizeX(){
 		return gridSizeX;
-		
+	}
+	public int getGridSizeY(){
+		return gridSizeY;
 	}
 	public List<GridPosition> getSpawnPositions(){
 		return spawnPositions;
 	}
 	public GridCell getGridCell(GridPosition gp){
+		System.out.println(gp);
 		return getGridCell(gp.getX(), gp.getY());
+	}
+	public int getWidthByHeight(){
+		return gridSizeX * gridSizeY;
 	}
 	public class DirectionGrid {
 		

@@ -1,13 +1,10 @@
 package model.inventory.factory;
 
-
 import model.drawing.Coord;
-import model.grid.griditem.towers.GreenTower;
 import model.grid.griditem.towers.RedTower;
 import model.gui.component.ComponentPosition;
 import model.gui.path.Path;
 import model.gui.touch.Touch;
-
 
 /**
  * RedTowerFactory
@@ -43,7 +40,9 @@ public class RedTowerFactory extends TowerFactory {
 	
 	@Override
 	public void mouseReleased(int mouseX, int mouseY){
-		Path.snap();
+		if(Touch.getInstance().isHolding()){
+			Path.snap();
+		}
 	}
 
 }

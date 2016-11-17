@@ -23,7 +23,7 @@ import model.grid.gridcell.GridPosition;
 public class RedTower extends Tower {
 
 	public RedTower(Coord coord){
-		super(coord, null);
+		super(coord);
 		setGridColor(GridColor.RED);
 		cooldownRemaining = 10;
 		range = 10;

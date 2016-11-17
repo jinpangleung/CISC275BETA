@@ -20,8 +20,8 @@ import model.grid.griditem.GridItem;
 
 public abstract class MovableObject extends GridItem {
 
-	public MovableObject(Coord coord, Animation animation, GridPosition gridPosition, Velocity velocity, GridColor gc) {
-		super(coord, animation, gridPosition, null);
+	public MovableObject(Coord coord, Animation animation, GridPosition gridPosition, GridColor gc, Velocity velocity) {
+		super(coord, animation, gridPosition, gc);
 		this.velocity = velocity;
 	}
 

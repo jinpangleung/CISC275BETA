@@ -18,7 +18,7 @@ public abstract class Gabion extends GridItem {
 	private int health = 100;
 
 	public Gabion(Coord coord, Animation animation, GridPosition gridPosition) {
-		super(coord, animation, gridPosition, null);
+		super(coord, animation, gridPosition);
 		// TODO Auto-generated constructor stub
 	}
 	

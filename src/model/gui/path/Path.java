@@ -3,6 +3,8 @@ package model.gui.path;
 import model.drawing.Coord;
 import model.grid.Grid;
 import model.grid.griditem.GridItem;
+import model.grid.griditem.trailitem.TrailItem;
+import model.gui.touch.Touch;
 import model.moving.Velocity;
 
 /*
@@ -40,8 +42,15 @@ public class Path {
 		
 	}
 	
-	public static void snap(GridItem gi, Coord destination, PathBehavior termination){
-		Path p = new Path(gi, destination, termination);
+	public static void snap(){
+		GridItem gi = Touch.getInstance().unClamp();
+		Coord destination = Touch.getInstance().getStartPosition();
+		Path p;
+		if(gi instanceof TrailItem){
+			p = new Path(gi, destination, new BackToGridBehavior());
+		} else {
+			p = new Path(gi, destination, new TowerBehavior());
+		}
 		p.initializeSpeed();
 		Grid.getInstance().addPath(p);
 	}

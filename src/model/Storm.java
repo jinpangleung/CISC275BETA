@@ -5,11 +5,11 @@ import java.util.Collection;
 import java.util.Iterator;
 
 import model.grid.Grid;
-import model.grid.gridcell.GridCell;
 import model.grid.gridcell.GridPosition;
 import model.grid.griditem.GridItem;
 import model.grid.griditem.gabion.Gabion;
 import model.grid.griditem.towers.Tower;
+
 /**
  * Storm
  * A storm comes in to damage the estuary and it interacts with gabions, towers, and esturayHealth
@@ -22,8 +22,8 @@ public class Storm {
 	protected boolean isStorming;
 	protected int damage;
 	
-	int sizeX = GridCell.getGridCellX();
-	int sizeY = GridCell.getGridCellY();
+	int sizeX = Grid.getInstance().getSquareWidth();
+	int sizeY = Grid.getInstance().getSquareHeight();
 	boolean done = false;
 	
 	public Storm(){

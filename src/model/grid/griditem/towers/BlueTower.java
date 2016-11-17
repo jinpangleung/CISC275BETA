@@ -21,7 +21,7 @@ import model.grid.gridcell.GridPosition;
 public class BlueTower extends Tower{
 	
 	public BlueTower(Coord coord){
-		super(coord, null);
+		super(coord);
 		setGridColor(GridColor.BLUE);
 		cooldownRemaining = 10;
 		range = 10;

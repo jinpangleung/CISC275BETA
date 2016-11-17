@@ -3,6 +3,8 @@ package model.inventory.factory;
 import model.drawing.Coord;
 import model.grid.griditem.gabion.OysterGabion;
 import model.gui.component.ComponentPosition;
+import model.gui.path.DestroyBehavior;
+import model.gui.path.Path;
 import model.gui.touch.Touch;
 
 /**
@@ -33,14 +35,8 @@ public class OysterGabionFactory extends TowerFactory {
 		// If applicable, clamp new tower to touch
 		if(oysters >= OYSTERS_PER_GABION){
 			oysters -= OYSTERS_PER_GABION;
-			Touch.getInstance().clamp(new OysterGabion(new Coord(topLeft.getX(), topLeft.getY()), null, null));
+			//Touch.getInstance().clamp(new OysterGabion(new Coord(topLeft.getX(), topLeft.getY())));
 		}
-	}
-	
-	@Override
-	public void mouseReleased(int mouseX, int mouseY){
-		// Do nothing
-		Path.snap();
 	}
 
 }

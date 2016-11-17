@@ -1,5 +1,8 @@
 package model.gui.component;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 /**
  * Component
  * Component is a static "frame" that exists within a component mapping
@@ -65,6 +68,13 @@ public abstract class Component {
 		str += "Top Left : " + topLeft.toString() + "\n";
 		str += "Bottom Right : " + bottomRight.toString();
 		return str;
+	}
+	
+	public void draw(Graphics g){
+		g.setColor(Color.CYAN);
+		g.fillRect(this.getTopLeft().getX(), this.getTopLeft().getY(),
+				this.getBottomRight().getX() - this.getTopLeft().getX(),
+				this.getBottomRight().getY() - this.getTopLeft().getY());
 	}
 
 }

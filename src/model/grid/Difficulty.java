@@ -68,7 +68,7 @@ public class Difficulty {
 		Coord coord = Grid.getInstance().getValidCoord(spawnPoint);
 		toBeSpawned.setCoord(coord);
 //		toBeSpawned.setCoord(new Coord(toBeSpawned.getCoord().getX(), 0));
-		Grid.getInstance().addPath(new Path(toBeSpawned, coord, new BackToGridBehavior()));
+		Grid.getInstance().addPath(new Path(toBeSpawned, coord, Direction.STRAIGHT, PathTermination.TO_GRID, 1));
 	}
 	
 	/**
