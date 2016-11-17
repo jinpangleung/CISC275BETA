@@ -25,7 +25,7 @@ public class Touch {
 	private Coord startPosition;
 	private static Touch instance;
 	
-	private Touch(){
+	public Touch(){
 		nullObject = new DefaultTouchObject();
 		holding = nullObject;
 		isHolding = false;
