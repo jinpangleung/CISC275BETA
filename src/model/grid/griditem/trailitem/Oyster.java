@@ -24,11 +24,8 @@ import model.moving.Velocity;
  */
 
 public class Oyster extends TrailItem{
-
-	public Oyster(Coord coord, Animation animation, GridPosition gridPosition, Velocity velocity) {
-		super(coord, animation, gridPosition, velocity);
-		setGridColor(GridColor.BLUE);
-		animation = new Animation("oyster", Offset.CENTER, Offset.CENTER);
+	public Oyster(){
+		super(new Coord(0,0), new Animation("oyster", Offset.CENTER, Offset.CENTER), new GridPosition(0,0), new Velocity(0,1),  GridColor.BLUE);
 	}
 
 }
