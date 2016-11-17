@@ -24,10 +24,15 @@ import model.moving.Velocity;
 
 public class Pollutant extends TrailItem{
 
-	public Pollutant(Coord coord, Animation animation, GridPosition gridPosition, Velocity velocity) {
-		super(coord, animation, gridPosition, velocity);
-		setGridColor(GridColor.RED);
-		animation = new Animation("pollutant", Offset.CENTER, Offset.CENTER);
+	public Pollutant(){
+		super(new Coord(0,0), null, new GridPosition(0,0), new Velocity(0,1),  GridColor.RED);
+		int randomNum = (int)(Math.random() * 3);
+		switch(randomNum){
+		case 0: this.setAnimation(new Animation("pollutant1", Offset.CENTER, Offset.CENTER)); break;
+		case 1: this.setAnimation(new Animation("pollutant2", Offset.CENTER, Offset.CENTER)); break;
+		case 2: this.setAnimation(new Animation("pollutant3", Offset.CENTER, Offset.CENTER)); break;
+		case 3: this.setAnimation(new Animation("pollutant4", Offset.CENTER, Offset.CENTER)); break;
+		}
 	}
 	
 }
