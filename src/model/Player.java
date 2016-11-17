@@ -19,7 +19,7 @@ public class Player {
 	private int stormNum;
 	
 	static private Player player;
-	private Player(){
+	protected Player(){
 		estuaryHealth = 500; // ranging from 0 -> 1000, start right in the middle
 		startTime = System.currentTimeMillis();
 		gameTime = 0;
