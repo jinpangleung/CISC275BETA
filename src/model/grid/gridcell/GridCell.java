@@ -17,7 +17,7 @@ import model.gui.touch.Touch;
  * It also let us know which GriCell each item is on, even when drawable object moved in terms of 
  * PixelGrid
  * 
- * @author Roy
+ * @author Eric
  *
  */
 
