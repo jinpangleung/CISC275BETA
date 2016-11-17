@@ -14,17 +14,19 @@ public class Inventory {
 	
 	private static Inventory instance;
 	
-	public Inventory(){
+	private Inventory(){
 		rtf = new RedTowerFactory(new ComponentPosition(0, 0), 0, 0);
 		btf = new BlueTowerFactory(new ComponentPosition(0, 0), 0, 0);
 		gtf = new GreenTowerFactory(new ComponentPosition(0, 0), 0, 0);
 		cgf = new ConcreteGabionFactory(new ComponentPosition(0, 0), 0, 0);
 		ogf = new OysterGabionFactory(new ComponentPosition(0, 0), 0, 0);
-		
-		instance = this;
 	}
 	
 	public static Inventory getInstance(){
+		if(instance == null){
+			instance = new Inventory();
+		}
+		
 		return instance;
 	}
 	
