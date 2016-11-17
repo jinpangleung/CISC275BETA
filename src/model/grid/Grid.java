@@ -4,9 +4,10 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 
-import model.*;
-
+import model.drawing.Coord;
+import model.grid.gridcell.Direction;
 import model.grid.gridcell.GridCell;
 import model.grid.gridcell.GridPosition;
 import model.grid.griditem.GridItem;
@@ -16,7 +17,7 @@ import model.grid.griditem.trailitem.TrailItem;
 import model.gui.path.Path;
 import model.gui.component.Component;
 import model.gui.component.ComponentPosition;
-import model.gui.touch.Touch;
+import model.moving.Acceleration;
 
 
 ///////////////HAS LOTS OF ERRORS, WILL DEBUG AFTER ALL CLASSES ARE IMPLEMENTED/////////////
@@ -54,7 +55,18 @@ public class Grid extends Component {
 	}
 	
 	public void update(long timeElapsed){
-		
+		difficulty.update(timeElapsed);
+		for(GridItem gi : items){
+			gi.update(timeElapsed);
+		}
+	}
+	
+	public List<GridPosition> getSpawnPositions(){
+		return board.getSpawnPositions();
+	}
+	
+	public Coord getValidCoord(GridPosition gp){
+		return pixelgrid.getValidCoord(gp);
 	}
 	
 	public void draw(Graphics g){
@@ -130,7 +142,7 @@ public class Grid extends Component {
 	
 	@Override
 	public void mouseReleased(int mouseX, int mouseY){
-		board.release(mouseX, mouseY);
+		board.getGridCell(mouseX, mouseY).release(mouseX, mouseY);
 	}
 	
 	public boolean hasTower(GridPosition gp){
@@ -169,6 +181,9 @@ public class Grid extends Component {
 		return acc;
 	}
 	public GridCell getGridCell(Coord coord){
-		return pixelgrid.getGridCell(coord);
+		GridPosition gp = pixelgrid.getGridCell(coord);
+		return board.getGridCell(gp);
 	}
+	
+	
 }
