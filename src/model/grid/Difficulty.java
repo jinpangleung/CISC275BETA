@@ -17,6 +17,15 @@ import model.grid.griditem.trailitem.Pollutant;
 import model.grid.griditem.trailitem.TrailItem;
 import model.gui.path.*;
 
+/**
+ * Difficulty
+ * the difficulty of the game, how fast stuff spawn
+ * it also handles where the trailItem spawns
+ * 
+ * @author Roy, Sam
+ *
+ */
+
 public class Difficulty {
 	
 	private long timeToSpawn;
