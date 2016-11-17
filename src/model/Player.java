@@ -2,17 +2,30 @@ package model;
 
 import model.grid.Grid;
 
+/**
+ * Player
+ * player has the timer of the game and it keeps count for the estuary health
+ * 
+ * @author Roy
+ *
+ */
+
 public class Player {
 	private int estuaryHealth;
 	private long startTime;
 	private long gameTime;
 	private int oysterCount;
+	private Storm storm;
+	private int stormNum;
 	
 	static private Player player;
 	private Player(){
 		estuaryHealth = 500; // ranging from 0 -> 1000, start right in the middle
 		startTime = System.currentTimeMillis();
 		gameTime = 0;
+		player = this;
+		this.storm = new Storm();
+		stormNum = 0;
 	}
 	
 	static public Player getInstance(){
