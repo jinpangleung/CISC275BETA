@@ -4,10 +4,13 @@ import java.awt.Graphics;
 
 import model.drawing.Animation;
 import model.grid.Grid;
+import model.grid.GridColor;
+import model.grid.griditem.gabion.GabionType;
 import model.grid.griditem.trailitem.TrailItem;
 import model.gui.component.*;
 import model.gui.touch.Touch;
 import model.inventory.Inventory;
+import model.inventory.factory.TowerFactory;
 
 /**
  * Model
@@ -31,6 +34,11 @@ public class Model {
 	private Storm storm;
 	private int stormNum;
 	
+	public static final double GRID_HEIGHT = .8;
+	public static final double GRID_WIDTH = .7;
+	public static final double Y_PADDING = .1;
+	public static final double X_PADDING = .05;
+	
 	
 	public void initialize(int screenWidth, int screenHeight){
 		System.out.println("\tModel is being initialized");
@@ -44,14 +52,22 @@ public class Model {
 		// Initialize Grid component
 		this.screenWidth = screenWidth;
 		this.screenHeight = screenHeight;
-		int xOffset = (int) (screenWidth * .05);
-		int yOffset = (int) (screenHeight * .1);
-		int xSize = (int) (screenWidth * .7);
-		int ySize = (int) (screenHeight * .8);
-		this.grid = new Grid(new ComponentPosition(xOffset, yOffset), xSize, ySize);
+		this.grid = new Grid(
+				new ComponentPosition((int) (screenWidth * X_PADDING), (int) (screenHeight * Y_PADDING)),
+				(int) (screenWidth * GRID_WIDTH), (int) (screenHeight * GRID_HEIGHT));
 		this.componentMapping.addComponent(grid);
+		// Initialize Inventory and its components
+		inventory = Inventory.getInstance();
+		inventory.initialize(screenWidth, screenHeight);
+		this.componentMapping.addComponent(inventory.getTowerFactory(GridColor.RED));
+		this.componentMapping.addComponent(inventory.getTowerFactory(GridColor.BLUE));
+		this.componentMapping.addComponent(inventory.getTowerFactory(GridColor.GREEN));
+		this.componentMapping.addComponent(inventory.getGabionFactory(GabionType.CONCRETE));
+		this.componentMapping.addComponent(inventory.getGabionFactory(GabionType.OYSTER));
+		
 		// Initialize Player
 		this.player = Player.getInstance();
+		
 		// Initialize Storm
 		this.storm = new Storm();
 		this.stormNum = 0;
