@@ -56,7 +56,7 @@ public class Model {
 		if (player.getGameTime()/1000000000 - stormNum == 1){
 			storm.dealDamage();
 			stormNum++;
-		}		
+		}
 	}
 	
 	public void draw(Graphics g){
