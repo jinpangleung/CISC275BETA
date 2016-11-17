@@ -38,7 +38,7 @@ public class OysterGabionFactory extends TowerFactory {
 	@Override
 	public void mouseReleased(int mouseX, int mouseY){
 		// Do nothing
-		Touch.getInstance().snap();
+		Path.snap();
 	}
 
 }
