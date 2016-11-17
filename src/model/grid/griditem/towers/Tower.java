@@ -30,9 +30,8 @@ public abstract class Tower extends GridItem {
 	protected long cooldownRemaining;
 	protected int range;
 	
-	public Tower(Coord coord) {
-		super(coord, new Animation(), new GridPosition(0, 0));
-		
+	public Tower(Coord coord, GridColor gc) {
+		super(coord, new Animation(), new GridPosition(0, 0), gc);
 	}
 	
 	public long getCooldownRemaining(){
