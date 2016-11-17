@@ -24,9 +24,10 @@ import model.moving.Velocity;
 
 public class TrailItem extends MovableObject {
 	
-	public TrailItem(Coord coord, Animation animation, GridPosition gridPosition, Velocity velocity) {
-		super(coord, animation, gridPosition, velocity);
+	public TrailItem(Coord coord, Animation animation, GridPosition gridPosition, Velocity velocity, GridColor gc) {
+		super(coord, animation, gridPosition, velocity, gc);
 	}
+	
 	
 	public void click(){
 		Collection<Tower> TI = Grid.getInstance().getTowers();
