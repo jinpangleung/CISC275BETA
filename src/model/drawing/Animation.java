@@ -55,7 +55,6 @@ public class Animation {
 		insertImage("images/pollutant4.png", "pollutant4");
 		insertImage("images/pollutant_tower.png", "pollutant_tower");
 		
-		
 	}
 	
 	private BufferedImage getImage(String imageName){
@@ -88,7 +87,7 @@ public class Animation {
 
 	public Animation(){
 		sprites = new String[1];
-		sprites[0] = "null";
+		sprites[0] = "null"; //This may need to get changed to work correctly
 		this.length = 1;
 		this.index = 0;
 		this.xOffset = 0;
