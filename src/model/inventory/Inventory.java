@@ -4,6 +4,15 @@ import model.grid.GridColor;
 import model.gui.component.ComponentPosition;
 import model.inventory.factory.*;
 
+/**
+ * Inventory
+ * where the towers and gabions are going to be shown intially before players drag it onto
+ * the grid
+ * 
+ * @author eric
+ *
+ */
+
 public class Inventory {
 	
 	RedTowerFactory rtf;
