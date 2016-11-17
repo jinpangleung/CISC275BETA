@@ -70,6 +70,12 @@ public class Grid extends Component {
 		}
 	}
 	
+	//3 is arbitary, it depends on where we actually want out spawn point to be at
+	public Coord spawnPoint(){
+		Coord coord = new Coord(0.05*GridCell.getGridCellX()*3, 0.1*GridCell.getGridCellY());
+		return coord;
+	}
+	
 	public List<GridPosition> getSpawnPositions(){
 		return board.getSpawnPositions();
 	}
