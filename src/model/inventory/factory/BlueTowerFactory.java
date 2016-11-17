@@ -2,9 +2,12 @@ package model.inventory.factory;
 import model.drawing.Coord;
 import model.grid.griditem.towers.BlueTower;
 import model.gui.component.ComponentPosition;
+import model.gui.path.Path;
 import model.gui.touch.Touch;
 
 /**
+ * BlueTowerFactory
+ * a factory that creates bluetower
  * 
  * @author eric
  *
@@ -36,7 +39,7 @@ public class BlueTowerFactory extends TowerFactory {
 	@Override
 	public void mouseReleased(int mouseX, int mouseY){
 		// Do nothing
-		Touch.getInstance().snap();
+		Path.snap();
 	}
 
 }
