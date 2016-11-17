@@ -2,6 +2,7 @@ package model.grid;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 import model.*;
@@ -18,8 +19,8 @@ import model.gui.path.*;
 
 public class Difficulty {
 	
-	private int timeToSpawn;
-	private final int SPAWN_TIME = 120;
+	private long timeToSpawn;
+	private final long SPAWN_TIME = 300000000;
 	private int oysterCount;
 	private int invasiveCount;
 	private int pollutantCount;
@@ -34,9 +35,9 @@ public class Difficulty {
 	 * <p>
 	 * Look at the current Grid and decide how to scale difficulty and when to spawn new objects
 	 */
-	public void update(){
+	public void update(long timeElapsed){
 		if(timeToSpawn > 0){
-			timeToSpawn--;
+			timeToSpawn -= timeElapsed;
 		} else {
 			spawn();
 			timeToSpawn = SPAWN_TIME;
@@ -51,12 +52,12 @@ public class Difficulty {
 	//this needs to be fixed
 	public void spawn(){
 		TrailItem toBeSpawned = decideSpawn();
-		List<GridPosition> listOfSpawnPoints = Grid.getInstance().getCells().getSpawnPositions();
+		List<GridPosition> listOfSpawnPoints = Grid.getInstance().getSpawnPositions();
 		int randomIndex = ThreadLocalRandom.current().nextInt(0, listOfSpawnPoints.size());
 		GridPosition spawnPoint = listOfSpawnPoints.get(randomIndex);
-		toBeSpawned.setGridPosition(spawnPoint);
-		GridPosition coord = Grid.getInstance().getPixelGrid().getValidPixelPosn(spawnPoint);
-		toBeSpawned.setCoord(coord.getX(), 0);
+		toBeSpawned.setGridPosition(new GridPosition(spawnPoint.getX(), spawnPoint.getY()));
+		Coord coord = Grid.getInstance().getValidCoord(spawnPoint);
+		toBeSpawned.setCoord(coord);
 //		toBeSpawned.setCoord(new Coord(toBeSpawned.getCoord().getX(), 0));
 		Grid.getInstance().addPath(new Path(toBeSpawned, coord, Direction.STRAIGHT, PathTermination.TO_GRID, 1));
 	}
@@ -70,6 +71,18 @@ public class Difficulty {
 	public TrailItem decideSpawn(){
 		//(Poissen process? maybe not) in time the random should have a nice average between the 4
 		//if by chance it doesnt, the spawn rate should be adjusted when the item is called by our random.
+		
+		Random rand = new Random();
+		int r = rand.nextInt(4);
+		
+		switch(r){
+		case 0: return new Oyster();
+		case 1: return new Pollutant();
+		case 2: return new InvasiveItem();
+		case 3: return new Larvae();
+		}
+		
+		/*
 		int randomNum = (int)(Math.random() * 3);
 		
 		if(randomNum == 0){
@@ -146,6 +159,7 @@ public class Difficulty {
 //				return new Pollutant(3);
 //			}
 		return new Pollutant();
+		*/
 		}
 	}
 
