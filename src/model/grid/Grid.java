@@ -193,6 +193,8 @@ public class Grid extends Component {
 		GridPosition gp = pixelgrid.getGridCell(coord);
 		return board.getGridCell(gp);
 	}
-	
+	public int getWidthByHeight() {
+		return board.getWidthByHeight();
+	}
 	
 }
