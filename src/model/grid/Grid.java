@@ -130,11 +130,11 @@ public class Grid extends Component {
 		return gabions;
 	}
 	
-	public int getSquareWidth(){
-		return board.getSquareWidth();
+	public double getSquareWidth(){
+		return (board.getBoardWidth())*0.7;
 	}
-	public int getSquareHeight(){
-		return board.getSquareHeight();
+	public double getSquareHeight(){
+		return (board.getBoardHeight())*0.8;
 	}
 	
 	@Override
