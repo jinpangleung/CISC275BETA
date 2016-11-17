@@ -33,7 +33,28 @@ public class Animation {
 	}
 	
 	public static void initialize(){
-		imageLibrary.put("null", null);
+		insertImage("images/ConcreteGabion.png", "ConcreteGabion");
+		insertImage("images/EH1.png", "EH1");
+		insertImage("images/EH2.png", "EH2");
+		insertImage("images/EH3.png", "EH3");
+		insertImage("images/EH4.png", "EH4");
+		insertImage("images/Fisherman.png", "Fisherman");
+		insertImage("images/Losing Screen.png", "LosingScreen");
+		insertImage("images/OysterGabion.png", "OysterGabion");
+		insertImage("images/Rain.png", "rain");
+		insertImage("images/Storm.png", "storm");
+		insertImage("images/background.png", "background");
+		insertImage("images/invasive_item.png", "invasive_item");
+		insertImage("images/invasive_item_tower.png", "invasive_item_tower");
+		insertImage("images/larvae.png", "larvae");
+		insertImage("images/oyster.png", "oyster");
+		insertImage("images/oyster_tower.png", "oyster_tower");
+		insertImage("images/pollutant1.png", "pollutant1");
+		insertImage("images/pollutant2.png", "pollutant2");
+		insertImage("images/pollutant3.png", "pollutant3");
+		insertImage("images/pollutant4.png", "pollutant4");
+		insertImage("images/pollutant_tower.png", "pollutant_tower");
+		
 	}
 	
 	private BufferedImage getImage(String imageName){
@@ -66,7 +87,7 @@ public class Animation {
 
 	public Animation(){
 		sprites = new String[1];
-		sprites[0] = "null";
+		sprites[0] = "null"; //This may need to get changed to work correctly
 		this.length = 1;
 		this.index = 0;
 		this.xOffset = 0;

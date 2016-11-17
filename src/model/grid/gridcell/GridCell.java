@@ -9,6 +9,19 @@ import model.gui.path.BackToGridBehavior;
 import model.gui.path.TowerBehavior;
 import model.gui.touch.Touch;
 
+
+/**
+ * GridCell
+ * GridCell is part of the grid that the game is going to be played on
+ * It handles the placing of towers ad gabions from the inventory
+ * It also let us know which GriCell each item is on, even when drawable object moved in terms of 
+ * PixelGrid
+ * 
+ * @author Roy
+ *
+ */
+
+
 // A spot on the underlying Grid of the game
 // Mostly controls direction of the water flowing
 public class GridCell {
