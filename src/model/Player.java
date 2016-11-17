@@ -11,7 +11,7 @@ public class Player {
 	private int stormNum;
 	
 	static private Player player;
-	public Player(){
+	private Player(){
 		estuaryHealth = 500; // ranging from 0 -> 1000, start right in the middle
 		startTime = System.currentTimeMillis();
 		gameTime = 0;
@@ -21,6 +21,9 @@ public class Player {
 	}
 	
 	static public Player getInstance(){
+		if(player == null){
+			player = new Player();
+		}
 		return player;
 	}
 	
